@@ -3,10 +3,12 @@ import React from "react";
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import ERPServices from "./erpServices";
+import ERPServices from "./components/erpServices";
+
 const HeroSection = () => {
   return (
     <>
+    
     <Navbar/>
     <div className="relative w-full h-96 lg:h-screen">
       {/* Background Image */}
@@ -40,7 +42,7 @@ const HeroSection = () => {
       
     </div>
     <ERPServices/>
-    
+  
     <Footer/></>
   );
 };

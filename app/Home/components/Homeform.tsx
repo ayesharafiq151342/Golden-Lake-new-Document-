@@ -3,7 +3,7 @@
 
 "use client";
 import { useState } from "react";
-import Button from '../../ui/style'
+import Button from '@/app/ui/style'
 import Link from "next/link";
 
 export default function ERPForm() {
