@@ -3,7 +3,7 @@
 import React from 'react';
 import Navbar from '../components/navbar';
 import Homeform from './components/Homeform';
-import Icon from './components/icon';
+
 import FlipCardGrid from './components/flipcard';
 import ERPFeatures from './components/erpFeatures';
 import IndustriesSection from './components/Industrysecttion';
@@ -15,7 +15,7 @@ export default function Homepage() {
     <div className='m-auto'>
       <Navbar />
       <Fronthome />
-      <Icon />
+      
       <FlipCardGrid />
       <ERPFeatures />
       <IndustriesSection />

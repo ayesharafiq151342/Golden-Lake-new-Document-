@@ -1,13 +1,15 @@
-// pages/index.js (or Home.js if it's a component)
-"use client"; 
-import React from "react";
-// Correct path to Button.js
+"use client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-import Homepage from './Home/page'
-import Footer from "./components/footer"
-export default function Home() {
-  return (
- <>  <Homepage/>
-   <Footer/></>
-  );
-}
+const Page = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/Home"); // Use "/Home" if your folder is capitalized
+  }, [router]);
+
+  return <div>Redirecting...</div>;
+};
+
+export default Page;
