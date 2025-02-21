@@ -9,6 +9,7 @@ import ERPFeatures from './components/erpFeatures';
 import IndustriesSection from './components/Industrysecttion';
 import Fronthome from './components/fronthome';
 import Testimonials from './components/Testimoinal';
+import Footer from '../components/footer';
 
 export default function Homepage() {
   return (
@@ -21,6 +22,7 @@ export default function Homepage() {
       <IndustriesSection />
       <Homeform />
       <Testimonials />
+      <Footer/>
     </div>
   );
 }
