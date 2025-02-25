@@ -24,7 +24,7 @@ function Trading_services() {
 
       <img src="/dashboard2.png" alt="Expert Advice" className="mx-auto lg:w-9/12  w-80 mt-10 rounded-lg shadow-md" />
 
-      <div className="p-4 lg:p-8 min-h-screen">
+      <div className="p-4 lg:p-8 min-h-96">
         <div className="lg:w-9/12 mx-auto bg-white p-6 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Need help with trading and distribution?</h1>

@@ -53,9 +53,9 @@ function Page() {
       </section>
 
       {/* Process Bottlenecks Section */}
-      <section className="w-full lg:w-9/12 m-auto p-4">
+      <section className="w-full lg:w-9/12 m-auto first-letter: p-4">
         <h3 className="text-2xl font-bold mb-4 text-center md:text-left">How Industry 4.0 is Removing Process Bottlenecks?</h3>
-        <p className='text-justify mb-4'>Industry 4.0 transforms manufacturing by integrating cutting-edge technologies:</p>
+        <p className='text-justify mb-4'>Industrys 4.0 transforms manufacturing by integrating cutting-edge technologies:</p>
         <ul className="space-y-4 text-gray-700">
           <li><span className="font-semibold text-purple-600">Internet of Things (IoT):</span><br />IoT connects devices, optimizing machine performance, safety, and agility.</li>
           <li><span className="font-semibold text-purple-600">Digital Manufacturing Cloud (DMC):</span><br />A cloud-based ERP offering simplified machine integration and advanced analytics.</li>

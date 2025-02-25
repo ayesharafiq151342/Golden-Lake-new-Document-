@@ -96,10 +96,10 @@ const Navbar = () => {
                 <div className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg dark:bg-gray-800 z-50">
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                     {[
-                      { name: "Trading & Distribution", link: "/services/trading" },
-                      { name: "Manufacturing ERP", link: "/services/manufacturing" },
-                      { name: "Project Management", link: "/services/project-management" },
-                      { name: "CRM", link: "/services/crm" },
+                      { name: "Trading & Distribution System", link: "/services/trading" },
+                      { name: "Manufacturing ERP System", link: "/services/manufacturing" },
+                      { name: "Supply Chain Management System", link: "/services/supply_chain" },
+                      { name: "Project management system", link: "/services/project-managment" },
                     ].map((service, index) => (
                       <li key={index}>
                         <Link
