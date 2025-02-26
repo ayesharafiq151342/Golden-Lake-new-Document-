@@ -6,7 +6,7 @@ function Project_management() {
   return (
 <>
 <div>
-      <h1>hi project</h1>
+     
       <Navbar />
 
       {/* HERO SECTION */}

@@ -10,10 +10,10 @@ const HeroSection = () => {
     <>
     
     <Navbar/>
-    <div className="relative w-full h-96 lg:h-screen">
+    <div className="relative w-full lg:h-screen">
       {/* Background Image */}
       <div
-        className="w-full h-full bg-cover bg-center"
+        className="w-full h-full  bg-cover bg-center"
         style={{ backgroundImage: "url('/bg-services.jpg')" }} // Replace with your image path
       ></div>
 

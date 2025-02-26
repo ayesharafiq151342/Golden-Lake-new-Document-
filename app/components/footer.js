@@ -50,14 +50,12 @@ const Footer = () => {
               <Mail className="mr-2 w-5 h-5" /> info@Golden-lake.com
             </li>
             <li className="flex items-center">
-              <Phone className="mr-2 w-5 h-5" /> +92 
+              <Phone className="mr-2 w-5 h-5" /> +92390061612
             </li>
-            <li className="flex items-center">
-              <Phone className="mr-2 w-5 h-5" /> +92 
-            </li>
+          
             <li className="flex items-start">
               <MapPin className="mr-2 w-5 h-5 mt-1" />
-              Office #100, 101 Second Floor Kohinoor 1, Faisalabad, Pakistan
+              6th floor Legacy tower khinoor city  Faisalabad, Pakistan
             </li>
           </ul>
 

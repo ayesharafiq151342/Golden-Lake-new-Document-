@@ -100,6 +100,12 @@ const Navbar = () => {
                       { name: "Manufacturing ERP System", link: "/services/manufacturing" },
                       { name: "Supply Chain Management System", link: "/services/supply_chain" },
                       { name: "Project management system", link: "/services/project-managment" },
+                      { name: "Customer Relationship Management", link: "/services/CRM" },
+                      { name: "Golden-lake  NGOS", link: "/services/Ngo" },
+                      { name: "HR or Payroll  system", link: "/services/Payroll" },
+
+
+
                     ].map((service, index) => (
                       <li key={index}>
                         <Link
