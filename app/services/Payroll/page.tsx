@@ -1,7 +1,8 @@
 import Footer from '@/app/components/footer'
 import Navbar from '@/app/components/navbar'
 import React from 'react'
-
+import Payroll_services from './components/payroll-serveics'
+import Payroll_benifts from './components/payroll-benfit'
 function page() {
   return (
     <div>
@@ -46,7 +47,7 @@ function page() {
 
         {/* Right Side Text */}
         <div className="md:w-1/2 text-left ml-5">
-        <h2 className="text-3xl font-bold text-purple-800 mb-4">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-purple-800 mb-4">
         Revolutionize HR & Payroll Processing with Multiapp Payroll Automation
           </h2>
           <p className="text-gray-600">
@@ -68,118 +69,82 @@ function page() {
        </ul>
         </div>
       </section>
-      <div className="bg-gray-100  min-h-screen  p-6">
-      {/* Header Section */}
-      <div className="mx-auto bg-white p-6 lg:mt-44 lg:w-9/12  rounded-2xl shadow-md">
-        <h1 className="text-2xl font-bold text-gray-800">Employee Self-Service Portal: Updated Features</h1>
-        <p className="text-gray-600 mt-2">
-          A fully interactive and enhanced employee management portal designed to streamline self-service functionalities.
-        </p>
-      </div>
-
-      {/* Main Content */}
-      <div className="grid grid-cols-1 md:grid-cols-3   gap-6 mt-6 lg:w-9/12 mx-auto">
-        {/* Left Column (Feature Details) */}
-      
-        <div className="md:col-span-2 bg-white p-6 rounded-2xl  shadow-md lg:h-[75%] h-screen">
-        <h1 className='text-5xl'>Employee Self-Service Portal</h1>
-          <h2 className="text-lg font-semibold mt-10 text-gray-700">Employee Self-Service Portal: Updated Features</h2>
-          <p className="text-gray-600 text-sm mt-1">
-          As businesses strive for enhanced employee engagement and streamlined processes, the updated features in the employee self-service portal play a pivotal role. These features empower employees and contribute to a more efficient HR and payroll management process.
-          </p>
-          
-          <h2 className="mt-4 text-lg font-semibold text-gray-700">Streamlined Personal Information Management</h2>
-          <p className="text-gray-600 text-sm mt-1">
-          One of the key features allows employees to effortlessly view and update their details, including contact information and emergency contacts. This functionality ensures the accuracy of employee records and facilitates better communication within the organization.       </p>
-          <h2 className="mt-4 text-lg font-semibold text-gray-700 ">Enhanced Payroll Accessibility:</h2>
-          <p className="text-gray-600 text-sm mt-1 ">
-          The payroll experience is elevated for employees through seamless access to pay stubs and current and past pay periods and the convenience of downloading W-2 forms. This heightened accessibility fosters transparency, enabling employees to effortlessly stay informed about their financial information. </p>
-     
-         </div>
-
-        {/* Right Column (Profile & Actions) */}
-        <div className="bg-gray-100 min-h-screen -auto  flex justify-center" >
-      <div className="bg-white p-6 rounded-2xl shadow-md w-full max-w-md lg:h-[75%] h-screen">
-        {/* Profile Section */}
-        <div className="flex items-center gap-4">
-          <img
-            src="/payrol-boy.jpg"
-            alt="Profile"
-            className="rounded-full border-2 w-20 h-16 border-gray-300"
-          />
-          <div>
-            <h3 className="text-lg font-bold">Mr. Kashif</h3>
-            <p className="text-sm text-gray-600">+92390061612</p>
-            <p className="text-xs text-gray-500"> Faisalabad</p>
-          </div>
-        </div>
-        
-        {/* Tabs */}
-        <div className="mt-4 flex gap-2">
-          <button className="bg-orange-500 text-white px-3 py-1 rounded-lg text-sm">Expense Claim</button>
-          <button className="bg-gray-200 text-gray-700 px-3 py-1 rounded-lg text-sm">Attendance</button>
-          <button className="bg-gray-200 text-gray-700 px-3 py-1 rounded-lg text-sm">Salary</button>
-        </div>
-        
-        {/* Expense Summary */}
-        <div className="mt-4 bg-orange-100 p-4 rounded-lg">
-          <h4 className="text-orange-700 font-semibold">Expense Claim Approved:</h4>
-          <p className="text-sm text-gray-600">Pending For Approval <span className="font-bold text-black">5600</span></p>
-        </div>
-        
-        {/* Expense List */}
-        <div className="mt-4">
-          <div className="flex justify-between items-center bg-red-500 text-white p-2 rounded-lg">
-            <span>Expense Claim List</span>
-            <button className="bg-white text-red-500 px-2 py-1 rounded text-xs">Add Expense</button>
-          </div>
-          
-          {/* Expense Items */}
-          <div className="mt-3 bg-white p-3 rounded-lg shadow">
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="text-sm font-semibold">Mr. Muddassar</p>
-                <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded">EXPENSE PAID</span>
-                <p className="text-sm text-gray-700">Freight Expense</p>
-                <p className="text-sm font-bold">3000</p>
-              </div>
-              <span className="text-xs text-gray-500">3 months ago</span>
-            </div>
-          </div>
-          
-          <div className="mt-3 bg-white p-3 rounded-lg shadow">
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="text-sm font-semibold">Mr. Muddassar</p>
-                <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded">EXPENSE PAID</span>
-                <p className="text-sm text-gray-700">Freight Expense</p>
-                <p className="text-sm font-bold">600</p>
-              </div>
-              <span className="text-xs text-gray-500">3 months ago</span>
-            </div>
-          </div>
-          
-          <div className="mt-3 bg-white p-3 rounded-lg shadow">
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="text-sm font-semibold">Mr. Muddassar</p>
-                <span className="bg-yellow-500 text-white text-xs px-2 py-1 rounded">PENDING APPROVAL</span>
-                <p className="text-sm text-gray-700">Freight Expense</p>
-                <p className="text-sm font-bold">600</p>
-              </div>
-              <span className="text-xs text-gray-500">2 weeks ago</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      </div></div>
+    <Payroll_services/>
       <img
             src="/h.webp"
             alt="Profile"
              className='m-auto'
             
           />
+        <section className="bg-purple-50 py-12 px-4">
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+          Features of HR and Payroll System Management
+        </h2>
+        <p className="mt-4 text-gray-600">
+          From time to time HR and payroll system will manage company employees’
+          records and history. Even so, Employee daily attendance, Employee
+          Leave Management, and Advances and Payroll auto-generated salary make
+          fewer men power.
+        </p>
+      </div>
+
+      <div className="border-t border-gray-400 mt-6 max-w-4xl mx-auto"></div>
+
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-gray-800">
+        {/* Definition Modules */}
+        <div>
+          <h3 className="text-lg font-semibold text-purple-700 border-l-4 pl-2 border-purple-700">
+            Definition Modules:
+          </h3>
+          <ul className="mt-2 list-disc list-inside space-y-1 text-gray-700">
+            <li>Employee Define</li>
+            <li>Units Define</li>
+            <li>Departments Define</li>
+            <li>Sections Define</li>
+            <li>Employee Designations</li>
+            <li>Gazetted Holiday Define</li>
+            <li>Salary Information</li>
+          </ul>
+        </div>
+
+        {/* Transaction Modules */}
+        <div>
+          <h3 className="text-lg font-semibold text-purple-700 border-l-4 pl-2 border-purple-700 ">
+            Transaction Modules:
+          </h3>
+          <ul className="mt-2 list-disc list-inside space-y-1 text-gray-700">
+            <li>Join / Resign / Transfer</li>
+            <li>Employee Attendance</li>
+            <li>Month Process</li>
+            <li>Salary Process</li>
+            <li>Advances</li>
+            <li>Increments</li>
+            <li>Loan</li>
+            <li>Deductions</li>
+            <li>Holidays</li>
+          </ul>
+        </div>
+
+        {/* Reports */}
+        <div>
+          <h3 className="text-lg font-semibold text-purple-700 border-l-4 pl-2 border-purple-700">
+            Reports:
+          </h3>
+          <ul className="mt-2 list-disc list-inside space-y-1 text-gray-700">
+            <li>List Department Wise</li>
+            <li>Salary Slip</li>
+            <li>Attendance</li>
+            <li>Attendance Register</li>
+            <li>Month Process</li>
+            <li>Salary Process</li>
+            <li>Increment List</li>
+            <li>Employee Advances</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <Payroll_benifts/>
   <Footer/>
     </div>
   )

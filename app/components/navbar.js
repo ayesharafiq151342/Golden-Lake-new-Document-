@@ -121,29 +121,46 @@ const Navbar = () => {
                 </div>
               )}
             </li>
+  {/* Services Dropdown with Navigation */}
+  <li className="relative">
+              <div className="flex items-center">
+                <Link
+                  href="/industry"
+                  className={`block px-3 py-2 ${
+                    activeLink === "industry" ? "bg-purple-100 text-purple-700" : "text-gray-900"
+                  } dark:text-white hover:bg-gray-100 rounded-lg`}
+                  onClick={() => handleLinkClick("industry")}
+                >Industry
+                  
+                </Link>
+                <ChevronDown
+                  className="ml-1 w-4 h-4 cursor-pointer"
+                  onClick={() => toggleDropdown("industry")}
+                />
+              </div>
 
-            {/* Industries Dropdown */}
-            <li className="relative">
-              <button
-                onClick={() => toggleDropdown("industries")}
-                className={`flex items-center w-full px-3 py-2 ${
-                  activeDropdown === "industries" ? "bg-purple-100 text-purple-700" : "text-gray-900"
-                } dark:text-white hover:bg-gray-100 rounded-lg`}
-              >
-                Industries <ChevronDown className="ml-2 w-4 h-4" />
-              </button>
-
-              {activeDropdown === "industries" && (
+              {activeDropdown === "industry" && (
                 <div className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg dark:bg-gray-800 z-50">
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                    {["Trading", "Manufacturing", "Textiles", "Foods"].map((industry, index) => (
+                    {[
+                      { name: "Trading ", link: "/industry/trading" },
+                      { name: "Manufacturing ERP System", link: "/services/manufacturing" },
+                      { name: "Supply Chain Management System", link: "/services/supply_chain" },
+                      { name: "Project management system", link: "/services/project-managment" },
+                      { name: "Customer Relationship Management", link: "/services/CRM" },
+                      { name: "Golden-lake  NGOS", link: "/services/Ngo" },
+                      { name: "HR or Payroll  system", link: "/services/Payroll" },
+
+
+
+                    ].map((service, index) => (
                       <li key={index}>
                         <Link
-                          href={`/industries/${industry.toLowerCase()}`}
+                          href={service.link}
                           className="block px-4 py-2 hover:bg-gray-100"
-                          onClick={() => handleLinkClick(industry)}
+                          onClick={() => handleLinkClick(service.name)}
                         >
-                          {industry}
+                          {service.name}
                         </Link>
                       </li>
                     ))}
@@ -151,34 +168,7 @@ const Navbar = () => {
                 </div>
               )}
             </li>
-            <li className="relative">
-              <button
-                onClick={() => toggleDropdown("industries")}
-                className={`flex items-center w-full px-3 py-2 ${
-                  activeDropdown === "industries" ? "bg-purple-100 text-purple-700" : "text-gray-900"
-                } dark:text-white hover:bg-gray-100 rounded-lg`}
-              >
-                Intventory <ChevronDown className="ml-2 w-4 h-4" />
-              </button>
-
-              {activeDropdown === "industries" && (
-                <div className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg dark:bg-gray-800 z-50">
-                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                    {["Trading", "Manufacturing", "Textiles", "Foods"].map((industry, index) => (
-                      <li key={index}>
-                        <Link
-                          href={`/industries/${industry.toLowerCase()}`}
-                          className="block px-4 py-2 hover:bg-gray-100"
-                          onClick={() => handleLinkClick(industry)}
-                        >
-                          {industry}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </li>
+           
             {/* Contact */}
             <li>
               <Link
