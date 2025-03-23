@@ -144,12 +144,13 @@ const Navbar = () => {
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                     {[
                       { name: "Trading ", link: "/industry/trading" },
-                      { name: "Manufacturing ERP System", link: "/services/manufacturing" },
-                      { name: "Supply Chain Management System", link: "/services/supply_chain" },
+                      { name: "Manufacturing ", link: "/industry/industry-manufacturing" },
+                      { name: "Food", link: "/industry/food" },
+                      { name: "Services", link: "/industry/services" },
                       { name: "Project management system", link: "/services/project-managment" },
                       { name: "Customer Relationship Management", link: "/services/CRM" },
                       { name: "Golden-lake  NGOS", link: "/services/Ngo" },
-                      { name: "HR or Payroll  system", link: "/services/Payroll" },
+                     
 
 
 

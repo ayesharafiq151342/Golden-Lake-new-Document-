@@ -6,7 +6,7 @@ function Fronthome() {
     <section
       className="w-full lg:h-screen h-96 flex flex-col items-center justify-center bg-cover bg-center text-center px-4"
       style={{
-        backgroundImage: `linear-gradient(rgba(128, 0, 128, 0.6), rgba(75, 0, 130, 0.6)), url('/bgimg.jpg')`,
+        backgroundImage: `linear-gradient(rgb(224, 150, 224), rgb(167, 135, 191,0.6)), url('/bgimg.jpg')`,
         backgroundBlendMode: 'overlay',
       }}
     >
