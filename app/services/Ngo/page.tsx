@@ -1,12 +1,16 @@
+"use client";
 import Footer from '@/app/components/footer'
 import Navbar from '@/app/components/navbar'
 import React from 'react'
 import Button from "@/app/ui/style";
-import Link from "next/link";
 import Image from 'next/image'
 import NGOERPBenefits from './components/Ngo-befits';
+import { useState } from "react";
+import DemoFormModal from "@/app/components/DemoFormModal";
 
 function NGO_management() {
+    const [isModalOpen, setModalOpen] = useState(false);
+  
   return (
 <>
 
@@ -21,13 +25,20 @@ function NGO_management() {
           <h3 className="text-3xl md:text-5xl font-bold mb-4 text-purple-700">
             Golden-Lake ERP System for NGOs
           </h3>
-          <p className="mb-4">
+          <p className="">
             Transform Your Manufacturing Operations, Streamline Processes, <br />
             Boost Productivity and Optimize Resources
           </p>
-          <Link href="#demo">
-            <Button label="Learn More" variant="primary" />
-          </Link>
+          <Button
+              label="Schedule a demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
         </div>
 
         {/* Image Section */}

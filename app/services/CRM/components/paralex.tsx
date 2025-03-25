@@ -27,7 +27,7 @@ function CrmParallax() {
 
           {/* Buttons */}
           <div className="flex flex-col md:flex-row justify-center mt-5 gap-4">
-            <Link href="#Contactus">
+            <Link href="/contactus">
               <Button label="Contact us" variant="secondary" />
             </Link>
           </div>

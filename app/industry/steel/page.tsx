@@ -2,8 +2,14 @@
 
 import Footer from "@/app/components/footer";
 import Navbar from "@/app/components/navbar";
+import { useState } from "react";
+import DemoFormModal from "@/app/components/DemoFormModal";
+import Button from "@/app/ui/style";
+import { motion } from "framer-motion";
 
-function page() {
+function Page() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       <Navbar />
@@ -32,12 +38,17 @@ function page() {
               company and provide a permanent solution.
             </p>
             {/* Contact Button */}
-            <a
-              href="#demo"
-              className="bg-purple-700 text-white px-6 py-2 rounded-lg mt-4 inline-block w-54 sm:w-auto"
-            >
-              Get Free Demo
-            </a>
+            <Button
+              label="Get Free Demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+
+            {/* Modal Component */}
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
           </div>
 
           {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
@@ -83,11 +94,19 @@ function page() {
           <li>Business Intelligence</li>
         </ul></div>
 <div className="flex-1">
-<img
-            src="/trading-erp.png"
-            alt="ERP Dashboard"
-            className="w-full max-w-2xl rounded-lg shadow-lg"
-          />
+
+             <motion.img
+      src="/trading-erp.png"
+      alt="ERP Services"
+      className="rounded-lg w-full max-w-2xl rounded-lg shadow-lg "
+      initial={{ opacity: 0, y: 20 }} // Starts slightly lower
+      animate={{ opacity: [0, 1, 1, 0], y: [20, 0, 0, 20] }} // Loop fade-in & bounce effect
+      transition={{
+        duration: 3, // Total time per cycle
+        ease: "easeInOut",
+        repeat: Infinity, // Infinite loop
+      }}
+    />
 </div>
         
 </div>
@@ -149,4 +168,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

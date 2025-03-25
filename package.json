@@ -13,11 +13,14 @@
     "axioss": "^0.0.1-security",
     "framer-motion": "^12.4.4",
     "lucide-react": "^0.475.0",
+    "mongoose": "^8.13.0",
     "next": "15.1.7",
+    "nodemailer": "^6.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-native-zigzag-view": "^0.2.0",
     "react-scroll": "^1.9.3",
+    "sonner": "^2.0.1",
     "swiper": "^11.2.4"
   },
   "devDependencies": {

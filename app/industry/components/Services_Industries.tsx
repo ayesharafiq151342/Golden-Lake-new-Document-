@@ -1,17 +1,17 @@
 import React from 'react'
-
+import Link from 'next/link';
 function Services_Industries() {
-  const industries = [
-    { name: "CHEMICALS", image: "/industory-chemical.jpg" },
-    { name: "STEELS", image: "/industory-steel.jpg" },
-    { name: "FOODS", image: "/industory-food.jpg" },
-    { name: "ENGINEERING", image: "/industory-engineering.jpg" },
-    { name: "TEXTILE", image: "/industory-textile.jpg" },
-    { name: "COLD HOUSE", image: "/industory-cold.webp" },
-    { name: "SERVICES", image: "/indusory-services.jpg" },
-    { name: "TRADING INDUSTRY", image: "/indusory-trading.jpg" },
-    { name: "REAL ESTATE & CONSTRUCTION", image: "/industory-real.jpg" },
-  ];
+const industries = [
+  { name: "CHEMICALS", image: "/industory-chemical.jpg", link: "/industry/Chemical" },
+  { name: "STEELS", image: "/industory-steel.jpg", link: "/industry/steel" },
+  { name: "FOODS", image: "/industory-food.jpg", link: "/industry/food" },
+  { name: "Solar", image: "/Solariamge.jpg", link: "/industry/solar-power-and-energy-management-systems" },
+
+  { name: "Cloud HOUSE", image: "/industory-cold.webp", link: "/industry/Cloud_Storage" },
+  { name: "SERVICES", image: "/indusory-services.jpg", link: "/industry/servicess" },
+  { name: "TRADING INDUSTRY", image: "/indusory-trading.jpg", link: "/industry/trading" },
+  { name: "Manufacturing Industry", image: "/industory-real.jpg", link: "/industry/industry-manufacturing" },
+];
   return (
    <><section className='p-5 lg:w-9/12 m-auto'>
    <div>
@@ -182,14 +182,18 @@ Managing the supply chain in the automotive industry is complex. ERP software pr
      {/* Industries Section */}
      <section className="mt-12">
        <h2 className="text-3xl font-bold text-gray-800 text-center">Industries we are Serving</h2>
-       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-         {industries.map((industry, index) => (
-           <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-             <img src={industry.image} alt={industry.name} className="w-full h-40 object-cover" />
-             <div className="p-4 text-center font-semibold text-gray-700">{industry.name}</div>
-           </div>
-         ))}
-       </div>
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+      {industries.map((industry, index) => (
+        <Link key={index} href={industry.link} className="group">
+          <div className="relative overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+            <img src={industry.image} alt={industry.name} className="w-full h-48 object-cover" />
+            <div className="absolute inset-0 bg-black bg-opacity-10 flex items-center justify-center">
+              <h3 className="text-white text-lg font-semibold">{industry.name}</h3>
+            </div>
+          </div>
+        </Link>
+      ))}
+    </div>
      </section>
 
      {/* Choosing the Right ERP Section */}

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 const challenges = [
     {
       title: "Scalability Issues",
@@ -42,7 +43,7 @@ const ERPIntegration = () => {
       <p className="text-gray-600 lg:text-start  text-justify ">
       Golden Lake ERP offers a seamless solution for Services Industries optimizing financial operations and analyzing business performance throughout the entire service organization. In the face of unique challenges such as profit-driven growth, competitive management, and large-scale transitions in the people and project-driven services sector, Golden Lake stands as the solution. By streamlining every business operation, it tailors a customized solution to meet the specific needs of each professional service organization.
       <br/>
-      With features spanning accounts and finance, cash and bank management, sales, HR and payroll, business intelligence, Project Management, and assets management, Multi-Techno ERP provides comprehensive control over resources and projects, configurable planning, seamless data integration, improved delivery models, and enhanced reporting capabilities. Experience centralized customer data, interlinked departments, and efficient management of invoice, billing, and order processes.
+      With features spanning accounts and finance, cash and bank management, sales, HR and payroll, business intelligence, Project Management, and assets management, Golden Lake ERP provides comprehensive control over resources and projects, configurable planning, seamless data integration, improved delivery models, and enhanced reporting capabilities. Experience centralized customer data, interlinked departments, and efficient management of invoice, billing, and order processes.
       </p>
       
       {/* Challenges Section */}
@@ -61,8 +62,18 @@ Additionally, it offers compliance management, risk assessment, and customer rel
       
       {/* Illustration Image */}
       <div className="flex justify-center mt-6">
-        <img src="/industry -services.png" alt="ERP Services" className="rounded-lg w-3/4 md:w-1/2" />
-      </div>
+         <motion.img
+      src="/industry -services.png"
+      alt="ERP Services"
+      className="rounded-lg w-3/4 md:w-1/2"
+      initial={{ opacity: 0, y: 20 }} // Starts slightly lower
+      animate={{ opacity: [0, 1, 1, 0], y: [20, 0, 0, 20] }} // Loop fade-in & bounce effect
+      transition={{
+        duration: 3, // Total time per cycle
+        ease: "easeInOut",
+        repeat: Infinity, // Infinite loop
+      }}
+    />  </div>
       
       {/* Features and Benefits Section */}
       <div className="grid md:grid-cols-2 gap-8 mt-12">

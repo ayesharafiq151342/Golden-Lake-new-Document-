@@ -4,8 +4,16 @@ import Footer from "@/app/components/footer";
 import Navbar from "@/app/components/navbar";
 import React from "react";
 import Link from "next/link";
-function page() {
+import { useState } from "react";
+import DemoFormModal from "@/app/components/DemoFormModal";
+import Button from "@/app/ui/style";
+import { motion } from "framer-motion";
+
+function Page() {
+  const [isModalOpen, setModalOpen] = useState(false);
   return (
+
+
     <>
       <Navbar />
       {/* Content */}
@@ -32,12 +40,18 @@ function page() {
               your processes.
             </p>
             {/* Contact Button */}
-            <a
-              href="#demo"
-              className="bg-purple-700 text-white px-6 py-2 rounded-lg mt-4 inline-block w-54 sm:w-auto"
-            >
-              Get Free Demo
-            </a>
+            {/* Contact Button Linking to Form */}
+            <Button
+              label="Get Free Demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+
+            {/* Modal Component */}
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
           </div>
 
           {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
@@ -125,73 +139,53 @@ function page() {
       </section>
       {/* ERP Principles of Solar Power and Energy Management Systems */}
       <section className="bg-gray-200 mt-10 py-16">
-        {/* Section Title */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
-            Features of ERP software in the Chemical Industry
-          </h1>
-        </div>
+      {/* Section Title Animation */}
+      <motion.div
+        className="text-center mb-10"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
+          Features of ERP Software in the Chemical Industry
+        </h1>
+      </motion.div>
 
-        {/* Two-column section */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-          <div className="bg-white p-6 rounded-lg shadow-md">
+      {/* Two-column section with animations */}
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+        {[
+          {
+            title: "Secure Documentation",
+            text: "ERP software Golden Lake can integrate all your existing systems into one. In return, efficiency is increased, and top quality is maintained everywhere...",
+          },
+          {
+            title: "Workflows and Processes",
+            text: "Quality control is an important part of the chemical industry. Moreover, it is also the basis for the production of chemicals...",
+          },
+          {
+            title: "Chemical Formulations",
+            text: "The chemical industry requires a master batch protocol. Moreover, it is ideal for ensuring full traceability and accuracy from one product batch to another...",
+          },
+          {
+            title: "Planning Decisions",
+            text: "Golden Lake ERP software gives you all the information you need to make well-informed decisions...",
+          },
+        ].map((item, index) => (
+          <motion.div
+            key={index}
+            className="bg-white p-6 rounded-lg shadow-md"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: index * 0.2 }} // Staggered effect
+          >
             <h2 className="text-xl font-semibold text-gray-700 mb-2">
-              Secure Documentation:
+              {item.title}
             </h2>
-            <p className="text-gray-600">
-              ERP software Golden Lake can integrate all your existing systems
-              into one. In return, efficiency is increased, and top quality is
-              maintained everywhere. The software gives you the flexibility and
-              power to manage the process from production to distribution. In
-              addition, all relevant documents, including master batch records,
-              chemical composition, hygiene, and quality control reports, are
-              stored in the system. As a result, the use of paper documents is
-              reduced, and the human resources required to do so are reduced.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-700 mb-2">
-              Workflows and Processes:
-            </h2>
-            <p className="text-gray-600">
-              Quality control is an important part of the chemical industry.
-              Moreover, it is also the basis for the production of chemicals.
-              However, human error cannot be ruled out. Golden Lake ERP
-              software manages workflow processes and puts master batch records
-              in place that fit perfectly into all business processes. It also
-              minimizes errors, improves chemical quality, and benefits your
-              business.
-            </p>
-          </div>
-        </div>
-
-        {/* Additional Two-column section */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mt-8">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-700 mb-2">
-              Chemical Formulations:
-            </h2>
-            <p className="text-gray-600">
-              The chemical industry requires a master batch protocol. Moreover,
-              it is ideal for ensuring full traceability and accuracy from one
-              product batch to another. It includes all the details of the
-              ingredients and mentions every step of the process.{" "}
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-700 mb-2">
-              Planning Decisions:
-            </h2>
-            <p className="text-gray-600">
-              Golden Lake ERP software gives you all the information you need
-              to make well-informed decisions. For example, when a production
-              manager closely monitors the availability of materials for
-              production based on demand, it helps simplify the process of
-              supply chain and inventory management.
-            </p>
-          </div>
-        </div>
-      </section>
+            <p className="text-gray-600">{item.text}</p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
       {/* Benefits of ERP software for chemical manufacturers: */}
       <section className=" md:w-9/12 m-auto mt-10 lg:w-9/12 2-full p-7">
         <section>
@@ -244,4 +238,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

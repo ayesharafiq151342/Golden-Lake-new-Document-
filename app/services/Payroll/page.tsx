@@ -1,9 +1,16 @@
+"use client";
 import Footer from '@/app/components/footer'
 import Navbar from '@/app/components/navbar'
-import React from 'react'
+import React, { useState } from 'react'
 import Payroll_services from './components/payroll-serveics'
 import Payroll_benifts from './components/payroll-benfit'
+
+import DemoFormModal from "@/app/components/DemoFormModal";
+import Button from "@/app/ui/style";
 function page() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  
   return (
     <div>
       
@@ -35,45 +42,49 @@ function page() {
     <div className="flex-1 hidden md:block"></div>
   </div>
 </div>
-<section className="flex flex-col md:flex-row items-center  rounded-lg shadow-md p-6 lg:w-9/12 lg:m-auto">
-        {/* Left Side Image */}
-        <div className="md:w-1/2 flex justify-center mb-6 md:mb-0 ">
-          <img
-            src="/payrol-image.webp"
-            alt="Ngo-image-acocount"
-            className="w-96  rounded-lg"
-          />
-        </div>
+<section className="flex flex-col mt-20 mb-20  md:flex-row items-center rounded-lg shadow-md p-6 lg:w-10/12 lg:mx-auto gap-6">
+  {/* Left Side Image */}
+  <div className="md:w-1/2 flex justify-center">
+    <img
+      src="/payrol-image.webp"
+      alt="Ngo-image-account"
+      className="w-80 h-96 md:w-96 rounded-lg shadow-lg"
+    />
+  </div>
 
-        {/* Right Side Text */}
-        <div className="md:w-1/2 text-left ml-5">
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-purple-800 mb-4">
-        Revolutionize HR & Payroll Processing with Multiapp Payroll Automation
-          </h2>
-          <p className="text-gray-600">
-          For NGOs to preserve financial integrity and guarantee that donor funds are used properly, a robust accounting system is necessary. NGOs can track spending, manage their money, and create financial reports with the help of Golden-lake’s Accounts and Financial Module. Advantages include:
-          </p>
-                 <ul className="list-disc ml-2 list-inside text-gray-700 mt-3" >
-        <li>
-        Monitor revenue and expenditures
-        </li>
-        <li>
-        Streamline financial reporting and audits
-        </li>
-        <li>
-        Guarantee adherence to donor and regulatory mandates
-        </li>
-        <li>
-        Establish financial transparency for stakeholders and donors
-        </li>
-       </ul>
-        </div>
-      </section>
+  {/* Right Side Text */}
+  <div className="md:w-1/2 text-left space-y-4">
+    <h2 className="text-xl sm:text-2xl md:text-xl lg:text-2xl font-bold text-purple-800">
+      Revolutionize HR & Payroll Processing with Multiapp Payroll Automation
+    </h2>
+    <p className="text-gray-100 md:text-gray-800">
+      For NGOs to preserve financial integrity and guarantee that donor funds are used properly, a robust accounting system is necessary. NGOs can track spending, manage their money, and create financial reports with the help of Golden-lake’s Accounts and Financial Module. Advantages include:
+    </p>
+    <ul className="list-disc ml-4 list-inside text-gray-100 md:text-gray-800">
+      <li>Monitor revenue and expenditures</li>
+      <li>Streamline financial reporting and audits</li>
+      <li>Guarantee adherence to donor and regulatory mandates</li>
+      <li>Establish financial transparency for stakeholders and donors</li>
+    </ul>
+    <Button
+              label="Get Free Demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+
+            {/* Modal Component */}
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
+  </div>
+</section>
+
     <Payroll_services/>
       <img
             src="/h.webp"
             alt="Profile"
-             className='m-auto'
+             className='m-auto mt-20 mb-20'
             
           />
         <section className="bg-purple-50 py-12 px-4">

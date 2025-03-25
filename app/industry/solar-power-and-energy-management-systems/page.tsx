@@ -2,9 +2,13 @@
 
 import Footer from "@/app/components/footer";
 import Navbar from "@/app/components/navbar";
-import React from "react";
-
-function page() {
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import DemoFormModal from "@/app/components/DemoFormModal";
+import Button from "@/app/ui/style";
+function Page() {
+    const [isModalOpen, setModalOpen] = useState(false);
+  
   return (
     <>
       <Navbar />
@@ -32,12 +36,18 @@ function page() {
               challenges of different industries
             </p>
             {/* Contact Button */}
-            <a
-              href="#demo"
-              className="bg-purple-700 text-white px-6 py-2 rounded-lg mt-4 inline-block w-54 sm:w-auto"
-            >
-              Get Free Demo
-            </a>
+              {/* Contact Button Linking to Form */}
+              <Button
+              label="Get Free Demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+
+            {/* Modal Component */}
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
           </div>
 
           {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
@@ -162,61 +172,53 @@ function page() {
       </section>
       {/* ERP Principles of Solar Power and Energy Management Systems */}
       <section className="bg-gray-200 mt-10 py-16">
-        {/* Section Title */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
-            ERP Principles of Solar Power and Energy Management Systems
-          </h1>
-        </div>
+      {/* Section Title */}
+      <motion.div
+        className="text-center mb-10"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
+          ERP Principles of Solar Power and Energy Management Systems
+        </h1>
+      </motion.div>
 
-        {/* Two-column section */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-          <div className="bg-white p-6 rounded-lg shadow-md">
+      {/* Two-column section */}
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+        {[
+          {
+            title: "Efficient Project Management",
+            text: "ERP systems facilitate seamless management of solar projects, from planning to execution, ensuring effective resource allocation, expense monitoring, and milestone tracking.",
+          },
+          {
+            title: "Computational Financial Management",
+            text: "Manage cash flow, track project expenses, and optimize profitability with features like accounting, forecasting, and budgeting tailored for solar enterprises.",
+          },
+          {
+            title: "Streamlined Inventory Control",
+            text: "Simplify inventory processes by ensuring critical tools and components are always available, reducing downtime and boosting productivity in solar operations.",
+          },
+          {
+            title: "Enhanced Operational Efficiency",
+            text: "ERP solutions integrate processes, enabling solar businesses to improve workflow coordination, ensure timely project completion, and meet industry demands effectively.",
+          },
+        ].map((item, index) => (
+          <motion.div
+            key={index}
+            className="bg-white p-6 rounded-lg shadow-md"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: index * 0.2 }} // Staggered animation
+          >
             <h2 className="text-xl font-semibold text-gray-700 mb-2">
-              Efficient Project Management
+              {item.title}
             </h2>
-            <p className="text-gray-600">
-              ERP systems facilitate seamless management of solar projects, from
-              planning to execution, ensuring effective resource allocation,
-              expense monitoring, and milestone tracking.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-700 mb-2">
-              Computational Financial Management
-            </h2>
-            <p className="text-gray-600">
-              Manage cash flow, track project expenses, and optimize
-              profitability with features like accounting, forecasting, and
-              budgeting tailored for solar enterprises.
-            </p>
-          </div>
-        </div>
-
-        {/* Additional Two-column section */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mt-8">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-700 mb-2">
-              Streamlined Inventory Control
-            </h2>
-            <p className="text-gray-600">
-              Simplify inventory processes by ensuring critical tools and
-              components are always available, reducing downtime and boosting
-              productivity in solar operations.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-700 mb-2">
-              Enhanced Operational Efficiency
-            </h2>
-            <p className="text-gray-600">
-              ERP solutions integrate processes, enabling solar businesses to
-              improve workflow coordination, ensure timely project completion,
-              and meet industry demands effectively.
-            </p>
-          </div>
-        </div>
-      </section>
+            <p className="text-gray-600">{item.text}</p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
       {/* Case Studies Demonstrating ERP Adoption in The Solar Business
               Successfully  */}
       <section className=" md:w-9/12 m-auto mt-10 lg:w-9/12 2-full p-7">
@@ -447,4 +449,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

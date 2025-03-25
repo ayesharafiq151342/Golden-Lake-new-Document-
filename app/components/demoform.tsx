@@ -1,9 +1,6 @@
 "use client";
 import { useState } from "react";
-
-import Button from "@/app/ui/style";
-
-
+import { Toaster, toast } from "sonner"; // Sonner for toast notifications
 
 function DemoForm() {
   // State for form inputs
@@ -14,28 +11,52 @@ function DemoForm() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   // Handle Input Change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   // Handle Form Submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent page reload
-    console.log("Form Data Submitted:", formData);
-    // Optional: Reset form after submission
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        toast.success("✅ Form submitted successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" }); // Reset form
+      } else {
+        toast.error("❌ Failed to submit form: " + (result.error || "Unknown error"));
+      }
+    } catch (error) {
+      const err = error as Error; // Type assertion
+      toast.error("❌ Error: " + err.message);
+    }
+
+    setLoading(false);
   };
 
-    return (
+  return (
+    <div>
+      {/* Toast Container */}
+      <Toaster position="top-right" richColors />
+      
       <form
         id="demo"
         onSubmit={handleSubmit}
-        className="bg-purple-700 bg-opacity-90 text-white p-6 rounded-lg shadow-md lg:w-9/12 h-96 "
+        className="bg-purple-700 bg-opacity-90 text-white p-6 rounded-lg shadow-md lg:w-9/12 h-auto"
       >
         <h2 className="text-lg font-semibold mb-4 text-center">Request for Demo</h2>
-  
-        {/* Name Input */}
+
         <input
           type="text"
           name="name"
@@ -45,8 +66,7 @@ function DemoForm() {
           className="w-full p-2 mb-3 rounded text-gray-900"
           required
         />
-  
-        {/* Email Input */}
+
         <input
           type="email"
           name="email"
@@ -56,8 +76,7 @@ function DemoForm() {
           className="w-full p-2 mb-3 rounded text-gray-900"
           required
         />
-  
-        {/* Phone Number Input */}
+
         <input
           type="tel"
           name="phone"
@@ -67,8 +86,7 @@ function DemoForm() {
           className="w-full p-2 mb-3 rounded text-gray-900"
           required
         />
-  
-        {/* Message Textarea */}
+
         <textarea
           name="message"
           placeholder="Your Message"
@@ -77,12 +95,18 @@ function DemoForm() {
           className="w-full p-2 mb-3 rounded text-gray-900"
           required
         ></textarea>
-  
+
         {/* Submit Button */}
-        <Button label="Submit" variant="secondary" />
+        <button
+          type="submit"
+          className="bg-white text-purple-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 transition disabled:opacity-50 w-full"
+          disabled={loading}
+        >
+          {loading ? "Submitting..." : "Submit"}
+        </button>
       </form>
-    );
-  };
-  
-  export default DemoForm;
-  
+    </div>
+  );
+}
+
+export default DemoForm;

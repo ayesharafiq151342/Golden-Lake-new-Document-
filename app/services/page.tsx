@@ -1,4 +1,4 @@
-'use CLient'
+"use client";
 import React from "react";
 
 import Navbar from "../components/navbar";
@@ -6,6 +6,7 @@ import Footer from "../components/footer";
 import ERPServices from "./components/erpServices";
 
 const HeroSection = () => {
+  
   return (
     <>
     
@@ -27,9 +28,7 @@ const HeroSection = () => {
       <br />
       From finance to HR, we provide a comprehensive solution to drive growth and success.
     </p>
-    <button className="mt-6 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg shadow-lg transition-all">
-      LEARN MORE
-    </button>
+  
   </div>
 </div>
 

@@ -1,9 +1,13 @@
-'use client'
-import React from 'react'
-import Button from "@/app/ui/style";
+"use client";
+import React, { useState } from 'react'
+
 import Link from "next/link";
 
+import DemoFormModal from "@/app/components/DemoFormModal";
+import Button from "@/app/ui/style";
 function Industry_paralex() {
+    const [isModalOpen, setModalOpen] = useState(false);
+  
   return (
     <div className='overflow-hidden'>
       
@@ -30,10 +34,19 @@ function Industry_paralex() {
 
         {/* Buttons */}
         <div className="flex flex-col md:flex-row lg:w-9/12 justify-center mt-5 gap-4">
-          <Link href="#demo">
-            <Button label="Free Demo" variant="secondary" />
-          </Link>
-          <Link href="#demo">
+          {/* Contact Button Linking to Form */}
+          <Button
+              label="Get Free Demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+
+            {/* Modal Component */}
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
+          <Link href="/aboutus">
             <Button label="Learn More" variant="secondary" />
           </Link>
         </div>

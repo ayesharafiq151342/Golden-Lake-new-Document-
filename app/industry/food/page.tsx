@@ -1,11 +1,16 @@
-'use client'
+"use client";
 
 import React from 'react'
 import Navbar from '@/app/components/navbar'
-
+import { useState } from "react";
+import DemoFormModal from "@/app/components/DemoFormModal";
+import Button from "@/app/ui/style";
 import Footer from '@/app/components/footer'
 import ERPFoodManufacturing from './components/food_features'
-function page() {
+function Page() {
+  
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return (
    <>
    <Navbar/>
@@ -34,11 +39,18 @@ function page() {
       Golden Lake ERP aids the growing complexity of the food and beverage industry, as well as the pressures for innovation.
       </p>
       {/* Contact Button */}
-      <a href="#demo" 
-        className="bg-purple-500  px-6 py-2 rounded-lg mt-4 inline-block w-54 sm:w-auto"
-      >
-        Get Free Demo
-      </a>
+       {/* Contact Button Linking to Form */}
+       <Button
+              label="Get Free Demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+
+            {/* Modal Component */}
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
     </div>
 
     {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
@@ -53,4 +65,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

@@ -1,17 +1,17 @@
 "use client";
 
 import Navbar from "@/app/components/navbar";
-import Button from "@/app/ui/style";
-import Link from "next/link";
 import Tarding_services from "./components/tarding_services";
 import TradingDistribution from "./components/msg";
 import Faqs from "./components/faqs";
 import Footer from "@/app/components/footer";
 import DemoForm from "@/app/components/demoform";
-
+import { useState } from "react";
+import DemoFormModal from "@/app/components/DemoFormModal";
+import Button from "@/app/ui/style";
 function Trading_system() {
+  const [isModalOpen, setModalOpen] = useState(false);
 
- 
   return (
     <>
       <Navbar />
@@ -32,18 +32,27 @@ function Trading_system() {
               Trading and Distribution Management System
             </h1>
             <p className="text-white mt-4 text-sm md:text-base">
-              Our ERP is a top-tier web-based enterprise solution designed to meet all your trading and distribution business needs.
+              Our ERP is a top-tier web-based enterprise solution designed to
+              meet all your trading and distribution business needs.
             </p>
 
             {/* Contact Button Linking to Form */}
-            <Link href="#demo">
-              <Button label="Get Free Demo" variant="primary" />
-            </Link>
+            <Button
+              label="Get Free Demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+
+            {/* Modal Component */}
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
           </div>
 
           {/* RIGHT SIDE - Request for Demo Form */}
           <div className="flex-1 flex justify-center">
-          <DemoForm/>
+            <DemoForm />
           </div>
         </div>
       </div>

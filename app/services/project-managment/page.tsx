@@ -1,10 +1,17 @@
+"use client";
+
 import React from 'react'
 import Navbar from '@/app/components/navbar';
 import Project_detail from './components/pro-details';
 import Footer from '@/app/components/footer';
+import { useState } from "react";
+import DemoFormModal from "@/app/components/DemoFormModal";
+import Button from "@/app/ui/style";
 function Project_management() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return (
-<>
+    <>
 <div>
      
       <Navbar />
@@ -30,11 +37,18 @@ function Project_management() {
         enhancing efficiency and collaboration for unparalleled success.
       </p>
       {/* Contact Button */}
-      <a href="#demo" 
-        className="bg-purple-500 text-white px-6 py-2 rounded-lg mt-4 inline-block w-full sm:w-auto"
-      >
-        Get Free Demo
-      </a>
+       {/* Contact Button Linking to Form */}
+       <Button
+              label="Get Free Demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+
+            {/* Modal Component */}
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
     </div>
 
     {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
