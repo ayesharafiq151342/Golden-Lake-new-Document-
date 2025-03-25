@@ -5,9 +5,9 @@ import { ChevronDown, Search } from "lucide-react";
 import Button from "../ui/style";
 
 const Navbar = () => {
-  const [activeDropdown, setActiveDropdown] = useState(null); 
-  const [activeLink, setActiveLink] = useState(""); 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeLink, setActiveLink] = useState("");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Toggle dropdown menus
   const toggleDropdown = (dropdown) => {
@@ -43,12 +43,32 @@ const Navbar = () => {
           className="md:hidden text-gray-500 dark:text-gray-400 p-2 rounded-lg focus:ring-2"
         >
           {isMobileMenuOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
             </svg>
           )}
         </button>
@@ -60,14 +80,15 @@ const Navbar = () => {
           } md:flex md:items-center md:space-x-6 w-full md:w-auto absolute md:relative top-16 md:top-0 left-0 bg-white md:bg-transparent shadow-lg md:shadow-none z-50`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-8 border md:border-0 rounded-lg bg-gray-50 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-            
             {/* Home */}
             <li>
               <Link
                 href="/"
                 onClick={() => handleLinkClick("home")}
                 className={`block px-3 py-2 ${
-                  activeLink === "home" ? "bg-purple-100 text-purple-700" : "text-gray-900"
+                  activeLink === "home"
+                    ? "bg-purple-100 text-purple-700"
+                    : "text-gray-900"
                 } dark:text-white hover:bg-gray-100 rounded-lg`}
               >
                 Home
@@ -80,7 +101,9 @@ const Navbar = () => {
                 <Link
                   href="/services"
                   className={`block px-3 py-2 ${
-                    activeLink === "services" ? "bg-purple-100 text-purple-700" : "text-gray-900"
+                    activeLink === "services"
+                      ? "bg-purple-100 text-purple-700"
+                      : "text-gray-900"
                   } dark:text-white hover:bg-gray-100 rounded-lg`}
                   onClick={() => handleLinkClick("services")}
                 >
@@ -96,16 +119,31 @@ const Navbar = () => {
                 <div className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg dark:bg-gray-800 z-50">
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                     {[
-                      { name: "Trading & Distribution System", link: "/services/trading" },
-                      { name: "Manufacturing ERP System", link: "/services/manufacturing" },
-                      { name: "Supply Chain Management System", link: "/services/supply_chain" },
-                      { name: "Project management system", link: "/services/project-managment" },
-                      { name: "Customer Relationship Management", link: "/services/CRM" },
+                      {
+                        name: "Trading & Distribution System",
+                        link: "/services/trading",
+                      },
+                      {
+                        name: "Manufacturing ERP System",
+                        link: "/services/manufacturing",
+                      },
+                      {
+                        name: "Supply Chain Management System",
+                        link: "/services/supply_chain",
+                      },
+                      {
+                        name: "Project management system",
+                        link: "/services/project-managment",
+                      },
+                      {
+                        name: "Customer Relationship Management",
+                        link: "/services/CRM",
+                      },
                       { name: "Golden-lake  NGOS", link: "/services/Ngo" },
-                      { name: "HR or Payroll  system", link: "/services/Payroll" },
-
-
-
+                      {
+                        name: "HR or Payroll  system",
+                        link: "/services/Payroll",
+                      },
                     ].map((service, index) => (
                       <li key={index}>
                         <Link
@@ -121,17 +159,19 @@ const Navbar = () => {
                 </div>
               )}
             </li>
-  {/* Services Dropdown with Navigation */}
-  <li className="relative">
+            {/* Services Dropdown with Navigation */}
+            <li className="relative">
               <div className="flex items-center">
                 <Link
                   href="/industry"
                   className={`block px-3 py-2 ${
-                    activeLink === "industry" ? "bg-purple-100 text-purple-700" : "text-gray-900"
+                    activeLink === "industry"
+                      ? "bg-purple-100 text-purple-700"
+                      : "text-gray-900"
                   } dark:text-white hover:bg-gray-100 rounded-lg`}
                   onClick={() => handleLinkClick("industry")}
-                >Industry
-                  
+                >
+                  Industry
                 </Link>
                 <ChevronDown
                   className="ml-1 w-4 h-4 cursor-pointer"
@@ -144,16 +184,22 @@ const Navbar = () => {
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                     {[
                       { name: "Trading ", link: "/industry/trading" },
-                      { name: "Manufacturing ", link: "/industry/industry-manufacturing" },
+                      {
+                        name: "Manufacturing ",
+                        link: "/industry/industry-manufacturing",
+                      },
                       { name: "Food", link: "/industry/food" },
+                      {
+                        name: "Solar Industry",
+                        link: "/industry/solar-power-and-energy-management-systems",
+                      },
+                      { name: "Chemical", link: "/industry/Chemical" },
+                      {
+                        name: "Cloud Storage",
+                        link: "/industry/Cloud_Storage",
+                      },
+                      { name: "Steel", link: "/industry/steel" },
                       { name: "Services", link: "/industry/services" },
-                      { name: "Project management system", link: "/services/project-managment" },
-                      { name: "Customer Relationship Management", link: "/services/CRM" },
-                      { name: "Golden-lake  NGOS", link: "/services/Ngo" },
-                     
-
-
-
                     ].map((service, index) => (
                       <li key={index}>
                         <Link
@@ -169,13 +215,15 @@ const Navbar = () => {
                 </div>
               )}
             </li>
-           
+
             {/* Contact */}
             <li>
               <Link
                 href="/contact"
                 className={`block px-3 py-2 ${
-                  activeLink === "contact" ? "bg-purple-100 text-purple-700" : "text-gray-900"
+                  activeLink === "contact"
+                    ? "bg-purple-100 text-purple-700"
+                    : "text-gray-900"
                 } dark:text-white hover:bg-gray-100 rounded-lg`}
                 onClick={() => handleLinkClick("contact")}
               >
@@ -186,7 +234,10 @@ const Navbar = () => {
 
           {/* Search & Button */}
           <div className="mt-4 md:mt-0 flex items-center space-x-3">
-            <Search className="text-gray-500 dark:text-purple-900 cursor-pointer" size={22} />
+            <Search
+              className="text-gray-500 dark:text-purple-900 cursor-pointer"
+              size={22}
+            />
             <Button label="Submit" variant="secondary" type="submit" />
           </div>
         </div>

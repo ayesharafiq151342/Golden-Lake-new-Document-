@@ -25,7 +25,7 @@ function Industry_paralex() {
 
         {/* Subheading */}
         <p className="mt-5 text-white text-center px-4 w-11/12 md:w-9/12 text-sm md:text-base">
-          Unlock the full potential of your business with our complete Trading and Distribution Management system.
+        Ready to boost efficiency, cut costs, and streamline operations? Discover the power of Golden Lake ERP for Manufacturing Industry.
         </p>
 
         {/* Buttons */}

@@ -76,13 +76,13 @@ function Trading_system() {
                     {/* LEFT SIDE - ERP Details */}
                     <div className="flex-1 m-auto text-center md:text-start">
                         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-                          
-ERP for Manufacturing Industry
+
+                            ERP for Manufacturing Industry
                         </h1>
                         <p className="text-white mt-4 text-sm md:text-base">
-                        Streamline production and inventory with a unified ERP system
-Boost efficiency and reduce costs with real-time data insights
-Enhance decision-making and maintain consistent product quality
+                            Streamline production and inventory with a unified ERP system
+                            Boost efficiency and reduce costs with real-time data insights
+                            Enhance decision-making and maintain consistent product quality
                         </p>
 
                         {/* Contact Button Linking to Form */}

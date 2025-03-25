@@ -31,7 +31,7 @@ const ERPFeatures = () => {
       {/* Features Section */}
       <div className="text-center">
         <h2 className="text-2xl font-semibold lg:text-center text-start mb-4">
-          Features of Multi-Techno ERP for Manufacturing Industry
+          Features of Golden Lake ERP for Manufacturing Industry
         </h2>
         <p className="text-lg lg:text-center text-start text-gray-600 mt-2">
           Improve efficiency, track inventory, and optimize your production process with key ERP features.
@@ -52,7 +52,7 @@ const ERPFeatures = () => {
       <section className="max-w-7xl mx-auto px-6 py-12">
       {/* Section Title */}
       <h2 className="text-2xl lg:text-center text-start font-semibold mb-4">
-      Implementation & Benefits of Multi-Techno ERP for Manufacturing Industry
+      Implementation & Benefits of Golden Lake ERP for Manufacturing Industry
         </h2>
 
       {/* ERP Implementation Image */}
@@ -77,10 +77,10 @@ const ERPFeatures = () => {
       {/* Conclusion */}
       <div className="text-center mt-10 lg:p-0 px-6">
         <h2 className="text-2xl lg:text-center text-start font-semibold mb-4">
-          Multi-Techno ERP for the Manufacturing Industry: Last Words
+          Golden Lake ERP for the Manufacturing Industry: Last Words
         </h2>
         <p className="text-lg text-gray-600 text-justify  mt-5">
-        We discussed “ERP for Manufacturing industry” in detail. Organizations must adopt new solutions in today’s fast-paced and competitive manufacturing industry. ERP systems designed for the manufacturing sector, like Multi-Techno ERP, provide a unified framework that improves efficiency, decision-making, and operational flow. One centralized system that connects production, inventory, supply chain, and financial data allows manufacturers to scale effortlessly, enhance quality, and dramatically decrease costs.
+        We discussed “ERP for Manufacturing industry” in detail. Organizations must adopt new solutions in today’s fast-paced and competitive manufacturing industry. ERP systems designed for the manufacturing sector, like Golden Lake ERP, provide a unified framework that improves efficiency, decision-making, and operational flow. One centralized system that connects production, inventory, supply chain, and financial data allows manufacturers to scale effortlessly, enhance quality, and dramatically decrease costs.
 
 To ensure your company’s continued success in the years to come, use our ERP system for the manufacturing industry. Manufacturers are prepared to face current and future issues with the help of this ERP system’s real-time data, automation features, and scalability.
 
