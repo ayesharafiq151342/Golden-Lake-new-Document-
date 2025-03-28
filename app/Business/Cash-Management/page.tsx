@@ -64,26 +64,31 @@ function Page() {
           <div className="grid grid-cols-3 gap-4 text-gray-700">
             <div>
               <h3 className="font-semibold">Setup:</h3>
-              <ul>
-                <li>- Bank Definition</li>
-                <li>- Cheque Book Collection</li>
+              <ul className="list-disc list-inside space-y-2">
+                <li> Bank Definition</li>
+                <li>Cheque Book Collection</li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold">Transactions</h3>
-              <ul>
-                <li>- Bank Revaluation</li>
-                <li>- Cash Book</li>
-                <li>- Bank Advice</li>
+              <ul className="list-disc list-inside space-y-2">
+
+                <li>Bank Transfer</li>
+                <li>Collection and Routs</li>
+
+                <li>Bank Reconciliation</li>
+                <li>Online Slip Transfer</li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold">Reports</h3>
-              <ul>
-                <li>- Bankwise Cashflow</li>
-                <li>- Bankwise Cashflow</li>
+              <ul className="list-disc list-inside space-y-2">
 
-                <li>- Cash Inflow Outflow</li>
+                <li>Bank Inflow Outflow Summary
+                </li>
+                <li>Bank Inflow Outflow</li>
+
+                <li> Cash Inflow Outflow</li>
               </ul>
             </div>
           </div>
@@ -156,32 +161,48 @@ function Page() {
           services are used in banks.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-2">Cash Flow Statement</h2>
-        <p className="mb-4">
-          The cash flow statement controls the inflow and outflow of cash inside
-          an organization. Moreover, companies use cash flow to keep their cash
-          flow positive and estimate future cash flow. Further, it is based on
-          investing, financial, and operating activities.
-        </p>
-
-        <ul className="list-disc list-inside space-y-2 mb-6">
-          <li>
-            <span className="font-semibold">Operating Activity:</span> An
-            organization’s primary revenue-generating operations and other
-            operations. That is not investing or financing.
-          </li>
-          <li>
-            <span className="font-semibold">Financing Activity:</span> Any cash
-            flows resulting from changes in the amount and mix of the entity’s
-            allocated equity capital or bank debt.
-          </li>
-          <li>
-            <span className="font-semibold">Investing Activity:</span> Any cash
-            flows not used in cash and equivalents from the buying and selling
-            of lengthy items.
-          </li>
-        </ul>
+   
       </div>
+      <div className="flex lg:w-9/12 m-auto  flex-col md:flex-row  gap-6">
+  {/* Text Section */}
+  <div className="md:w-1/2">
+    <h2 className="text-2xl font-semibold mb-2">Cash Flow Statement</h2>
+    <p className="mb-4">
+      The cash flow statement controls the inflow and outflow of cash inside an
+      organization. Moreover, companies use cash flow to keep their cash flow
+      positive and estimate future cash flow. Further, it is based on investing,
+      financial, and operating activities.
+    </p>
+
+    <ul className="list-disc list-inside space-y-2 mb-6">
+      <li>
+        <span className="font-semibold">Operating Activity:</span> An
+        organization’s primary revenue-generating operations and other operations
+        that are not investing or financing.
+      </li>
+      <li>
+        <span className="font-semibold">Financing Activity:</span> Any cash flows
+        resulting from changes in the amount and mix of the entity’s allocated
+        equity capital or bank debt.
+      </li>
+      <li>
+        <span className="font-semibold">Investing Activity:</span> Any cash flows
+        not used in cash and equivalents from the buying and selling of lengthy
+        items.
+      </li>
+    </ul>
+  </div>
+
+  {/* Image Section */}
+  <div className="md:w-1/2 flex justify-center">
+    <img
+      src="/cash-management-system-and-method-1536x1536.webp" // Replace with your actual image path
+      alt="Cash Flow Statement"
+      className="w-full max-w-sm rounded-lg shadow-md mb-20"
+    />
+  </div>
+</div>
+
       <ParalexCash />{" "}
       <div className="lg:w-9/12 m-auto mt-10 ">
         {/* Definition Section */}
@@ -209,6 +230,12 @@ function Page() {
             <li>Enhancing financial management</li>
             <li>Minimizing risks and inefficiencies</li>
           </ul>
+          <p className="text-gray-700 mt-4">
+          Multi-Techno can help you design, implement, and maintain a robust cash management system.
+<br/>Our ERP system for cash management:
+<br/>Cash Management Solutions
+<br/>Cash Management Services
+<br/>Cash Management System</p>
         </section>
       </div>
       <Footer />{" "}

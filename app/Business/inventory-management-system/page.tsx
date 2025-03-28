@@ -64,42 +64,65 @@ function InventoryManagement() {
           <img
             src="/Inventory Management System-image.jpg" // Replace with actual image
             alt="Accounting Dashboard"
-            className="w-full max-w-3xl rounded-lg shadow-md"
+            className="w-full mt-10 mb-10rounded-lg shadow-md"
           />
         </div>
         <h2 className="text-2xl font-bold mt-6 mb-3">
           Purpose of Inventory Management System
         </h2>
         <p className="mb-4 mt-10">
-          An inventory management system is a tool that allows you to track
-          goods across your business’s supply chain. It optimizes the order
-          management process and ensures that you can maintain the right stock
-          levels.
+        Inventory management aims to guarantee enough items to fulfil demand while producing excess or surplus inventory. Multi-Techno helps you maintain your inventory management software that is integrated with ERP.
         </p>
 
-       
-      <div className="grid grid-cols-1 lg:grid-cols-3">  <h3 className="text-xl font-bold mt-4">Features</h3> <ul className="list-disc list-inside mb-4">
-          <li>Real-time Category</li>
-          <li>Auto-Stock Updates</li>
-          <li>Item Orders</li>
-          <li>Stock Divisions</li>
-        </ul>
+        <h2 className="text-2xl font-bold mt-6 mb-3">
+        Features
+        </h2>
+        <p className="mb-4 mt-10">
+        An inventory management system is a tool that allows you to track goods across your business’s supply chain. Further, it optimizes the entire spectrum, from order placement with your vendor to order delivery to your customer and mapping a product’s complete journey.   </p>
 
-        <h3 className="text-xl font-bold mt-4">Transactions</h3>
-        <ul className="list-disc list-inside mb-4">
-          <li>Inventory Ordering Module</li>
-          <li>Stock Returns</li>
-          <li>Purchase Orders</li>
-          <li>Stock Transfer (Internal/External)</li>
-        </ul>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+  {/* Setup Section */}
+  <div>
+    <h3 className="text-xl font-bold mb-2">Setup</h3>
+    <ul className="list-disc list-inside space-y-2">
+      <li>Item Main Category</li>
+      <li>Sub Category</li>
+      <li>Definition</li>
+      <li>UOM Definition</li>
+      <li>Store Definition</li>
+    </ul>
+  </div>
 
-        <h3 className="text-xl font-bold mt-4">Reports</h3>
-        <ul className="list-disc list-inside mb-4">
-          <li>Sales Balance</li>
-          <li>Stock Reports</li>
-          <li>Purchase Statements</li>
-          <li>Automated Reports</li>
-        </ul></div>
+  {/* Transactions Section */}
+  <div>
+    <h3 className="text-xl font-bold mb-2">Transactions</h3>
+    <ul className="list-disc list-inside space-y-2">
+      <li>Inventory Opening Balance</li>
+      <li>Inventory Adjustment</li>
+      <li>Material Issue Note</li>
+      <li>Store Transfer</li>
+      <li>IGP (Inward Gate Pass)</li>
+      <li>OGP (Outward Gate Pass)</li>
+      <li>GRN (Goods Receipt Note)</li>
+    </ul>
+  </div>
+
+  {/* Reports Section */}
+  <div>
+    <h3 className="text-xl font-bold mb-2">Reports</h3>
+    <ul className="list-disc list-inside space-y-2">
+      <li>Stock Balance</li>
+      <li>Inward and Outward Gate Passes</li>
+      <li>Cost Center Wise Consumption Comparison Report</li>
+      <li>Min and Max Stock Level Base Reorder Report</li>
+      <li>Stock in Hand Value-Wise</li>
+      <li>Inter-Stores Transfer Summary Report</li>
+      <li>Main Category Wise Report</li>
+      <li>Sub Category Wise Report</li>
+    </ul>
+  </div>
+</div>
+
         <h2 className="text-2xl font-bold mt-6 mb-3">Barcoding and Tagging</h2>
         <p className="mb-4">
           The outstanding aspect of the inventory management system is the

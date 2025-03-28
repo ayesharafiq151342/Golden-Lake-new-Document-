@@ -243,8 +243,9 @@ const Navbar = () => {
         { name: "Purchase Management", link: "/Business/purchase-management" },
         { name: "Account Payable System/", link: "/Business/Account-payable-system/" },
         { name: "Sale Management System", link: "/Business/sale-management-system" },
-        { name: "Steel", link: "/Business/steel" },
-        { name: "Services", link: "/Business/services" },
+        { name: "Fixed Asset Management", link: "/Business/fixed-asset-management-erp-software" },
+        { name: "Administration And SecuritiesManagement", link: "/Business/administration-and-securities-management-system" },
+        { name: "Data Analytics And Reporting", link: "/Business/data-analytics-and-reporting" },
       ].map((service, index) => (
         <li key={index}>
           <Link

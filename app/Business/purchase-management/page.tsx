@@ -62,7 +62,7 @@ function InventoryManagement() {
           <img
             src="/Purcahse-managemnt-flow diagram.webp" // Replace with actual image
             alt="Accounting Dashboard"
-            className="w-full max-w-3xl rounded-lg shadow-md"
+            className="w-full  rounded-lg shadow-md"
           />
         </div>
         <div className="p-6   mx-auto  space-y-6">
@@ -122,7 +122,8 @@ function InventoryManagement() {
           </ul>
 
           <h2 className="text-xl font-bold">Procedure of Purchase</h2>
-          <p>
+          <p className="mb-4 text-justify">
+          
             The purchasing process is usually organized in a cycle, with each
             stage necessitating data exchange and numerous permissions. Because
             every company will have its unique touches, but in general, the
@@ -130,14 +131,16 @@ function InventoryManagement() {
           </p>
 
           <h3 className="font-semibold">Purchase Requisition</h3>
-          <p>
+          <p className="mb-4 text-justify">
+          
           A purchase requisition is a document an employee submits to their business’s financial department to request authorization to acquire products or services from outside the company.
 
 Golden Lake offers you the ERP software for your business.
           </p>
 
           <h3 className="font-semibold">Request for Quotation</h3>
-          <p>
+          <p className="mb-4 text-justify">
+          
             Businesses invite vendors and suppliers to submit bids for specific
             products or services.
             <br/>
@@ -145,41 +148,70 @@ Golden Lake offers you the ERP software for your business.
           </p>
 
           <h3 className="font-semibold">Quotation Approval</h3>
-          <p>
+          <p className="mb-4 text-justify">
+          
           The original employee sends the purchase requisition to the person in charge of P.O. approvals. By then, it could be the owner’s boss or someone further up the corporate ladder. Moreover, if the request is approved, you move on to the next phase in the procedure at this instant.
 
 
           </p>
 
           <h3 className="font-semibold">Purchase Order</h3>
-          <p>
+          <p className="mb-4 text-justify">
+          
           In a buying system of Multi Techno ERP software, a purchase order number is issued to a requisition once approved and transmitted to the vendor. This independent document starts the sales process and is a legally enforceable contract for all parties concerned.
           </p>
 
           <h3 className="font-semibold">Order Number</h3>
-          <p>
+          <p className="mb-4 text-justify">
+          
           The order number issued to the requisition is usually the same as the request number; furthermore, they are stored together.     Tracking incoming goods in the warehouse and managing product
           receipts.
           </p>
           <h3 className="font-semibold">Receipt Note</h3>
-          <p>
+          <p className="mb-4 text-justify">
+          
           The physical transfer of items into the warehouse from external suppliers is receiving goods. Moreover, it always adds to your warehouse’s supply of items. You may organize and execute your product receipts and keep track of the stock of materials that have been ordered and produced.
           </p>
           <h3 className="font-semibold">Inspection Note</h3>
-          <p>
+          <p className="mb-4 text-justify">
+          
           An inspection is a process that involves measuring, inspecting, testing, or assessing one or more qualities of a product and further comparing the findings to stated standards to determine if that feature is conformed to.     </p>
           <h3 className="font-semibold">G.R.N. (Goods Receipt Note)</h3>
-          <p>
+          <p className="mb-4 text-justify">
+          
           A Goods Received Note (G.R.N.) is a statement certifying a customers receipt of goods. The first thing to remember. It’s also referred to as a delivery note and is used to prove the transport of that product and that the consumers have received it. Furthermore, G.R.N. is used by suppliers and consumers to compare order and delivery quantities.
            </p>
            <h3 className="font-semibold">Avoid Fraud</h3>
-          <p>
+          <p className="mb-4 text-justify">
+          
           To avoid fraud or error, firms utilize the ERP implementation by G.R.N. as the supporting document in certain situations. For the most part, accounting departments will need it to track inventory transfers from one location to another. Furthermore, you can buy that ERP system from Multi-Techno.      </p>
           <h3 className="font-semibold">Bottom Line</h3>
-          <p>
+          <p className="mb-4 text-justify">
+          
           Streamline order placement and ensure timely inventory stock receipt with an efficient purchase management system for your business.  </p>
           </div>
-      </div>
+          <div className="flex flex-col md:flex-row items-center gap-6">
+  {/* Text Section */}
+  <div className="md:w-1/2">
+  <h3 className="text-xl font-bold mb-2">Efficient Purchase Management System for Streamlined Orders</h3>
+    <p className="text-justify">Streamline order placement and ensure timely inventory stock receipt with an efficient purchase management system for your business.</p>
+ <span className="font-bold">Application Category: </span> Business
+ </div>
+
+  
+
+  {/* Image Section */}
+  <div className="md:w-1/2 flex justify-center">
+    <img
+      src="/purchase-management-system1-300x300.jpg" // Replace with your actual image path
+      alt="Cash Flow Statement"
+      className="w-full max-w-sm rounded-lg shadow-md"
+    />
+  </div></div>
+</div>
+
+   
+
       <Footer />
     </>
   );

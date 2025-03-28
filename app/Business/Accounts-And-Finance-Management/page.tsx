@@ -149,10 +149,15 @@ function Page() {
        text-justify     The general ledger records all financial transactions, including assets, liabilities, income, and expenses.
         </p>
         <ul className="list-disc list-inside">
-          <li><strong>Closing Balance Reports:</strong> Used to verify the accounts and balance adjustments.</li>
-          <li><strong>Profit and Loss Reports:</strong> Summarizes revenue, expenses, and net profit.</li>
-          <li><strong>Trial Balance:</strong> Ensures all credits and debits are balanced.</li>
-          <li><strong>Cash Flow Statements:</strong> Tracks cash inflow and outflow for better financial management.</li>
+          <li><strong>Closing Balance Reports:</strong> A closing balance is an amount, positive or negative, that remains in an account. At this time, the maximum of business accountants will present management with a closing balance. This is normally in the form of a management accounts package. That includes the month’s credit as well as the total amount. Moreover, You can manage your closing reports with the business software of Multi-Techno Integrated software solutions.</li>
+          <li><strong>Period Define</strong> For the most part, Any time frame used for financial reporting is referred to as an accounting period. Furthermore, Activities that occur within a specified date range are included in the accounting period’s reports in Erp software.</li>
+          <li><strong>Vouchers</strong>Once the provider receives the Money, moreover, The vouchers are verified as paid. Further Payments are made and recorded in the proper ledger accounts. Also, Accounting software allows businesses to manage their financial operations better.</li>
+          <li><strong>Financial Statements</strong> Financial statements are documents that detail the financial and operating performance of a business. Moreover, Accounting accounts are often audited by government agencies, auditors, firms, and others. For tax, finance, and new investments, as well as to ensure accuracy.</li>
+          <li><strong>Profit and Loss Report</strong> Multi-techno Erp fulfillment maintains profit and loss reports for your business. All accounting functions are managed from a single screen, making accounting more trustworthy and simple.</li>
+          <li><strong>Trial Balance
+          </strong> The trial balance is a financial or accounting report that shows the current amounts in all accounts in the general ledger. Multi-techno offers the best software for accounting professionals who need to handle data from clients to complete tax returns or financial statements because you’ll achieve tasks in less time. And with higher competence than you could with any other software. Due to a low learning curve and smooth data entry methods.
+
+</li>
         </ul>
       </section>
     </div>
