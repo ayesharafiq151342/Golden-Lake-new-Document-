@@ -67,10 +67,11 @@ function Trading_system() {
       <div
         className="mt-20 mx-auto flex flex-col lg:items-center items-center h-screen justify-center bg-cover bg-center text-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(128, 0, 128, 0.6), rgba(75, 0, 130, 0.6)), url('/industry-manufacturing.jpg')`,
+          backgroundImage: ` url('/industry-manufacturing.jpg')`,
           backgroundBlendMode: "overlay",
         }}
       >
+        
         {/* Background Blur Overlay */}
         <div className="inset-0 bg-white/20"></div>
 

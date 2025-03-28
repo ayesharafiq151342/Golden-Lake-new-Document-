@@ -215,7 +215,52 @@ const Navbar = () => {
                 </div>
               )}
             </li>
+            <li className="relative">
+              <div className="flex items-center">
+                <Link
+                  href="/Business"
+                  className={`block px-3 py-2 ${
+                    activeLink === "Business"
+                      ? "bg-purple-100 text-purple-700"
+                      : "text-gray-900"
+                  } dark:text-white hover:bg-gray-100 rounded-lg`}
+                  onClick={() => handleLinkClick("Business")}
+                >
+                  Business
+                </Link>
+                <ChevronDown
+                  className="ml-1 w-4 h-4 cursor-pointer"
+                  onClick={() => toggleDropdown("Business")}
+                />
+              </div>
+              {activeDropdown === "Business" && (  // Fix: Change "Business Process " to "Business"
+  <div className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg dark:bg-gray-800 z-50">
+    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+      {[
+        { name: "Accounts And Finance Management  ", link: "/Business/Accounts-And-Finance-Management" },
+        { name: "Cash Management ", link: "/Business/Cash-Management" },
+        { name: "Inventory Management system", link: "/Business/inventory-management-system" },
+        { name: "Purchase Management", link: "/Business/purchase-management" },
+        { name: "Account Payable System/", link: "/Business/Account-payable-system/" },
+        { name: "Sale Management System", link: "/Business/sale-management-system" },
+        { name: "Steel", link: "/Business/steel" },
+        { name: "Services", link: "/Business/services" },
+      ].map((service, index) => (
+        <li key={index}>
+          <Link
+            href={service.link}
+            className="block px-4 py-2 hover:bg-gray-100"
+            onClick={() => handleLinkClick(service.name)}
+          >
+            {service.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
 
+            </li>
             {/* Contact */}
             <li>
               <Link
@@ -238,7 +283,7 @@ const Navbar = () => {
               className="text-gray-500 dark:text-purple-900 cursor-pointer"
               size={22}
             />
-            <Button label="Submit" variant="secondary" type="submit" />
+            <Button label="Submit" variant="Primary" type="submit"  className=" "/>
           </div>
         </div>
       </div>

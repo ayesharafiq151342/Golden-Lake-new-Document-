@@ -11,7 +11,7 @@ export default function ThankYou() {
       <h1 className="text-2xl font-bold text-gray-800 mt-4">Thank you for contacting us!</h1>
       <p className="text-gray-600 mt-2">
         We’ve received your message and will respond shortly. If you need immediate assistance, please call us at
-        <span className="text-purple-600 font-bold"> +92  318 6271612</span>
+        <span className="text-purple-600 font-bold"> +92  2514789</span>
       </p>
       <Link href="/" className="mt-4 inline-block bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700">
         Back Home

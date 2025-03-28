@@ -27,7 +27,7 @@ function Page() {
           {/* LEFT SIDE - ERP Details */}
           <div className="flex-1 text-center md:text-start">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-              Cold Storage
+              Cloud Storage
               <hr className="w-full border-white border-2 my-4" />
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-white">

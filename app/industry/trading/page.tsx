@@ -18,7 +18,8 @@ function Page() {
         className="relative mt-20 mx-auto flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen md:h-screen px-4 sm:px-6"
         style={{ backgroundImage: "url('/trading-imports-and-exports.webp')" }}
       >
-        <div className="bg-white lg:bg-transparent bg-opacity-80"></div>
+           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
 
         <div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
           {/* Left Content */}
