@@ -6,9 +6,47 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import DemoFormModal from "@/app/components/DemoFormModal";
 import Button from "@/app/ui/style";
+import ParalexData from "./components/paralex";
 function Page() {
   const [isModalOpen, setModalOpen] = useState(false);
+const Industry_service =[
+{
+  title:"Trading",
+  Link:"/industry/trading"
+},
+{
+  title:"Manufacturing",
+  Link:"/industry/industry-manufacturing"
+},
 
+{
+  title:"Food Industry",
+  Link:"/industry/food"
+},
+{
+  title:"Steel Industry",
+  Link:"/industry/services"
+},
+
+{
+  title:"Cloud Storage",
+  Link:"/industry/Cloud_Storage"
+},
+{
+  title:"Chemical Industry",
+  Link:"/industry/Chemical"
+},
+{
+  title:"Solar Industry",
+  Link:"/industry/solar-power-and-energy-management-systems"
+},
+{
+  title:"Service Industry",
+  Link:"/industry/services"
+},
+
+
+]
   return (
     <>
       <Navbar />
@@ -91,7 +129,6 @@ function Page() {
           <div className="grid mt-10 my-auto">
             <img src="/dashboard2.png" />
           </div>
-          
         </section>
       </section>
       {/* ERP Principles of Solar Power and Energy Management Systems */}
@@ -104,10 +141,11 @@ function Page() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
-          Features of Multi-Techno Data Analytics and Reporting
+            Features of Multi-Techno Data Analytics and Reporting
           </h1>
           <h1 className="text-sm sm:text-xl mt-4 font-bold text-gray-800">
-          Our robust platform offers a range of features to meet your company needs:
+            Our robust platform offers a range of features to meet your company
+            needs:
           </h1>
         </motion.div>
 
@@ -131,13 +169,13 @@ function Page() {
               text: "Efficiently generate reports without human intervention. Set up automatic notifications for when you need updates, which will land in your inbox or dashboard.",
             },
             {
-                title: "Real-Time Monitoring",
-                text: "Continuously monitor critical metrics to spot problems and opportunities as they arise. Adapt quickly to the ever-shifting demands of your business.",
-              },
-              {
-                title: "Integration Capabilities",
-                text: "Effortlessly integrate with your current systems to provide a consolidated view of company operations. This includes ERP platforms, CRM applications, and third-party databases."
-              },
+              title: "Real-Time Monitoring",
+              text: "Continuously monitor critical metrics to spot problems and opportunities as they arise. Adapt quickly to the ever-shifting demands of your business.",
+            },
+            {
+              title: "Integration Capabilities",
+              text: "Effortlessly integrate with your current systems to provide a consolidated view of company operations. This includes ERP platforms, CRM applications, and third-party databases.",
+            },
           ].map((item, index) => (
             <motion.div
               key={index}
@@ -153,237 +191,219 @@ function Page() {
             </motion.div>
           ))}
         </div>
-        
       </section>
-     
-            <img src="/data-analytics-and-reporting-image2.jpg" 
-           className="m-auto bg-red-700  mt-10 w-86   " />
-        
-          
+      <img
+        src="/data-analytics-and-reporting-image2.jpg"
+        className="m-auto bg-red-700  mt-10 w-86   "
+      />
       {/* Case Studies Demonstrating ERP Adoption in The Solar Business
               Successfully  */}
       <section className=" md:w-9/12 m-auto mt-10 lg:w-9/12 2-full p-7">
         <section>
           <div className="mt-10">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
-            Why Does Your Business Need Data Analytics and Reporting?
+              Why Does Your Business Need Data Analytics and Reporting?
             </h1>
             <p className="text-justify">
-              Several solar enterprises have deployed ERP systems to improve
-              operations and spurred expansion. Leading solar installation
-              business Solar Tech is one such example. Solar Tech increased
-              efficiency, accelerated project delivery, and improved customer
-              satisfaction by centralizing its processes, improving project
-              visibility, and reducing manual errors by implementing an ERP
-              system.
+              The benefits of data analytics and reporting extend across every
+              aspect of your business:
             </p>
-            <p className="text-justify">
-              SunPower, a multinational supplier of solar energy solutions, is
-              another case study. SunPower upgraded its inventory control,
-              strengthened its financial power, and optimized its supply chain
-              by implementing an ERP system. As a result, they were able to
-              lower expenses, enhance cash flow, and obtain a market advantage.
-            </p>
+            <ul className=" space-y-2">
+              <li className="mt-2">
+                {" "}
+                <h1 className="font-bold">1- Enhanced Decision-Making</h1>
+                <br />
+                Make confident judgments based on real-time understandings and
+                data-driven reports instead of estimation.
+              </li>
+              <li>
+                {" "}
+                <h1 className="font-bold">2- Increased Operational Efficiency</h1>
+                <br />
+                Find bottlenecks, inefficiencies, and opportunities to improve processes and reduce costs.
+              </li>
+              <li>
+                {" "}
+                <h1 className="font-bold"> 3- Competitive Advantage</h1>
+                <br />
+                Gain a deeper understanding of market trends and competitor strategies to stay one step ahead.  </li>
+              <li>
+                {" "}
+                <h1 className="font-bold">4-Simplified Compliance</h1>
+                <br />
+                Create accurate, audit-ready reports to meet monitoring requirements with ease.    </li>
+            
+          
+            </ul>
+            <section className="bg-white py-12 flex flex-col md:flex-row items-center">
+            <div className="md:w-9/12 text-center md:text-left">
+        <h2 className="text-3xl font-semibold text-gray-800">Industries We Serve</h2>
+        <p className="text-gray-600 mt-4">
+          Regardless of your industry, our data analytics solutions are personalized to meet your unique challenges and goals.
+        </p>
+        <ul className="mt-6 space-y-2 text-left md:text-start">
+          {Industry_service.map((industry, index) => (
+            <li key={index} > 
+              <a href={industry.Link} className="text-purple-600 text-start hover:text-purple-800 transition">
+                {index + 1}. {industry.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div> <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
+        <img src="/industy-we-service.png" alt="Industry Services" className="w-3/4 md:w-full max-w-sm" />
+      </div>
+    </section>
           </div>
-          <div className="mt-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
-              Implementing ERP for Solar Power and Energy Management Presents
-              Some Challenges and Considerations
-            </h1>
-            <p className="text-justify">
-              ERP systems have many advantages, but there are obstacles to their
-              implementation in the solar sector. The integration of current
-              systems and procedures is one of the primary challenges. Solar
-              enterprises frequently have legacy systems; careful planning and
-              execution are needed to integrate them with an ERP system.
-            </p>
-            <p className="text-justify">
-              Employee acceptance and training with the ERP system are other
-              factors to consider. Change management is essential to guarantee
-              that staff members are aware of the advantages of the ERP system
-              and can use its functions efficiently. Comprehensive training
-              courses and continuous assistance are needed for this.{" "}
-            </p>
-          </div>
-          <div className="mt-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
-              How ERP Raises Profitability, Productivity, and Efficiency in The
-              Solar Sector
-            </h1>
-            <p className="text-justify">
-              Integrating ERP systems with energy management and solar power
-              significantly impacts solar companies’ productivity,
-              profitability, and efficiency power.
-            </p>
-            <p className="text-justify">
-              ERP solutions allow solar enterprises to analyze data in real-time
-              and make proactive decisions to maximize energy production. This
-              entails locating solar panels that aren’t working well, spotting
-              maintenance problems, and maximizing energy use.
-            </p>
-            <p className="text-justify">
-              ERP systems also increase departmental collaboration and
-              streamline corporate procedures. This leads to decreased human
-              errors, more transparency, and expedited project completion. Solar
-              enterprises can make the most of their resources and finish
-              projects on schedule and under budget with improved project
-              management.{" "}
-            </p>
-          </div>
-          <div className="  mt-10">
-            <img src="/dashboard2.png" />
-          </div>
-          <div className="mt-10">
-            {/* <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
-              Case Studies Demonstrating ERP Adoption in The Solar Business
-              Successfully
-            </h1>
-            <p className="text-justify">
-              Several solar enterprises have deployed ERP systems to improve
-              operations and spurred expansion. Leading solar installation
-              business Solar Tech is one such example. Solar Tech increased
-              efficiency, accelerated project delivery, and improved customer
-              satisfaction by centralizing its processes, improving project
-              visibility, and reducing manual errors by implementing an ERP
-              system.{" "}
-            </p>
-            <p className="text-justify">
-              SunPower, a multinational supplier of solar energy solutions, is
-              another case study. SunPower upgraded its inventory control,
-              strengthened its financial power, and optimized its supply chain
-              by implementing an ERP system. As a result, they were able to
-              lower expenses, enhance cash flow, and obtain a market advantage.
-            </p>
-          </div>
-          <div className="mt-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
-              Implementing ERP for Solar Power and Energy Management Presents
-              Some Challenges and Considerations
-            </h1>
-            <p className="text-justify">
-              ERP systems have many advantages, but there are obstacles to their
-              implementation in the solar sector. The integration of current
-              systems and procedures is one of the primary challenges. Solar
-              enterprises frequently have legacy systems; careful planning and
-              execution are needed to integrate them with an ERP system.
-            </p>
-            <p className="text-justify">
-              Employee acceptance and training with the ERP system are other
-              factors to consider. Change management is essential to guarantee
-              that staff members are aware of the advantages of the ERP system
-              and can use its functions efficiently. Comprehensive training
-              courses and continuous assistance are needed for this.
-            </p>
-          </div>
-          <div className="mt-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
-              How ERP Raises Profitability, Productivity, and Efficiency in The
-              Solar Sector
-            </h1>
-            <p className="text-justify">
-              Integrating ERP systems with energy management and solar power
-              significantly impacts solar companies’ productivity,
-              profitability, and efficiency power.
-            </p>
-            <p className="text-justify">
-              ERP solutions allow solar enterprises to analyze data in real-time
-              and make proactive decisions to maximize energy production. This
-              entails locating solar panels that aren’t working well, spotting
-              maintenance problems, and maximizing energy use.
-            </p>
-            <p className="text-justify">
-              ERP systems also increase departmental collaboration and
-              streamline corporate procedures. This leads to decreased human
-              errors, more transparency, and expedited project completion. Solar
-              enterprises can make the most of their resources and finish
-              projects on schedule and under budget with improved project
-              management.{" "}
-            </p>
-          </div>
-          <div className="mt-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
-              How ERP Raises Profitability, Productivity, and Efficiency in The
-              Solar Sector
-            </h1>
-            <p className="text-justify">
-              Integrating ERP systems with energy management and solar power
-              significantly impacts solar companies’ productivity,
-              profitability, and efficiency power.
-            </p>
-            <p className="text-justify">
-              ERP solutions allow solar enterprises to analyze data in real-time
-              and make proactive decisions to maximize energy production. This
-              entails locating solar panels that aren’t working well, spotting
-              maintenance problems, and maximizing energy use.
-            </p>
-            <p className="text-justify">
-              ERP systems also increase departmental collaboration and
-              streamline corporate procedures. This leads to decreased human
-              errors, more transparency, and expedited project completion. Solar
-              enterprises can make the most of their resources and finish
-              projects on schedule and under budget with improved project
-              management.{" "}
-            </p>
-          </div>
-          <div className="mt-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
-              ERP Integration with Additional Technologies in The Solar Sector{" "}
-            </h1>
-            <p className="text-justify">
-              ERP systems can be combined with other technologies to improve
-              efficiency and performance in the solar business further. The
-              Internet of Things (IoT) is one such technology that makes it
-              possible to gather and examine data in real-time from solar panels
-              and other devices. Solar enterprises may get essential insights
-              into the performance of their installations and take proactive
-              measures to remedy any problems by combining IoT with ERP systems.{" "}
-            </p>
-            <p className="text-justify">
-              Artificial Intelligence (AI) is another technology that can be
-              connected with ERP systems. AI systems can analyze vast volumes of
-              data to forecast energy demand, improve energy production, and
-              offer suggestions for increasing efficiency. With this
-              integration, solar companies can automate procedures, cut
-              expenses, and boost overall performance.{" "}
-            </p>
-          </div>
-          <div className="mt-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
-              Future Developments and Trends in Energy Management and Solar
-              Power ERP{" "}
-            </h1>
-            <p className="text-justify">
-              With several emerging trends and breakthroughs, the future of ERP
-              in the solar business is bright. One such trend is using
-              blockchain technology to improve security and transparency in
-              solar energy transactions. In the solar energy industry,
-              blockchain technology can offer an unchangeable energy production
-              and consumption record, promoting accuracy and confidence.{" "}
-            </p>
-            <p className="text-justify">
-              Another breakthrough is utilizing machine learning algorithms in
-              ERP systems to automate and improve energy management. Machine
-              learning can use past data and trends to forecast energy
-              requirements, optimize energy use, and boost productivity.{" "}
-            </p>
-          </div>
-          <div className="mt-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
-              In Summary, Utilizing ERP to Propel the Solar Industry Forward{" "}
-            </h1>
-            <p className="text-justify">
-              The solar sector is revolutionized by integrating ERP systems with
-              solar power and energy management. ERP solutions improve solar
-              enterprises’ productivity, profitability, and efficiency by
-              streamlining business operations, facilitating collaboration, and
-              providing real-time data analysis. The future of ERP in the solar
-              business is bright with the integration of additional technologies
-              like AI and IoT. ERP is essential to moving the solar sector
-              toward a more efficient and sustainable future.
-            </p> */}
-          </div>
+ 
+        
         </section>
       </section>
+      <ParalexData/>
+      <section className=":w-9/12 m-auto mt-10 lg:w-9/12 2-full p-7">
+      <div className=" py-16">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-gray-800 mb-8">
+          Why Choose Multi-Techno for Data Analytics?
+        </h2>
+        <p className="text-gray-700 mb-6">
+          When you work with Multi-Techno ERP analytics software / solutions,
+          youll get solutions that generate outcomes because we mix cutting-edge
+          innovation with an in-depth knowledge of business demands. What
+          distinguishes us is this:
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              1. User-Friendly Interface
+            </h3>
+            <p className="text-gray-700">
+              Because our platform is intuitively built, even team members with
+              technical backgrounds can analyze data and create reports.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              2. Custom-Made Answers
+            </h3>
+            <p className="text-gray-700">
+              A companys operations may vary. Because of this, we provide
+              flexible solutions to meet your unique needs.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              3. State-of-the-Art Technology
+            </h3>
+            <p className="text-gray-700">
+              We leverage cutting-edge technology, such as analytics driven by
+              artificial intelligence and real-time monitoring, to provide you
+              with unmatched insights.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              4. Committed Assistance
+            </h3>
+            <p className="text-gray-700">
+              To ensure you get the most out of your system, our experienced
+              team is here 24/7 to answer questions, give training, and more.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              5. Flexible System
+            </h3>
+            <p className="text-gray-700">
+              Regardless of your company size, our solutions are designed to
+              scale with you, meeting your changing needs.
+            </p>
+          </div>
+        </div>
+
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            How Does It Work?
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Quickly and easily begin usingGolden Lake data analytics and
+            reporting tools, as mentioned below:
+          </p>
+          <ul className="list-disc list-inside text-gray-700">
+            <li className="mb-2">
+              <span className="font-semibold">Consult:</span> To determine the
+              optimal course of action, our specialists will examine your
+              companys objectives and present data infrastructure.
+            </li>
+            <li className="mb-2">
+              <span className="font-semibold">Implementation:</span> To meet your
+              unique requirements, we will tailor our platform and make it
+              compatible with your current infrastructure.
+            </li>
+            <li className="mb-2">
+              <span className="font-semibold">Become Trained:</span> Your team
+              will be able to make the most of the platform thanks to the
+              practical training well give them.
+            </li>
+            <li>
+              <span className="font-semibold">Continuous Assistance:</span> Use
+              our devoted teams round-the-clock help to keep your system running
+              correctly.
+            </li>
+          </ul>
+        </div>
+
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            Practical Outcomes
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Among the revolutionary outcomes experienced by businesses that have
+            implementedGolden Lake reporting and data analytics solutions
+            include:
+          </p>
+          <ul className="list-disc list-inside text-gray-700">
+            <li className="mb-2">
+              A <span className="font-semibold">35% boost</span> to operational
+              efficiency, using automated workflows and real-time monitoring.
+            </li>
+            <li className="mb-2">
+              A <span className="font-semibold">50% increase</span> in client
+              retention rate resulted from better understanding and meeting
+              customer needs through predictive analytics.
+            </li>
+            <li>
+              A <span className="font-semibold">20% decrease</span> in expenses
+              can be achieved by identifying inefficiencies and optimizing
+              resource allocation.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            Are You Ready to Experience Your Data?
+          </h2>
+          <p className="text-gray-700 mb-4">
+            The future of your company is in the data you have collected. Express
+            its full potential withGolden Lake robust data analytics and
+            reporting solutions.
+          </p>
+          <p className="text-gray-700">
+            Please make an appointment for a no-cost demo or get more information
+            by contacting us today. Discover the power of real-time reporting and
+            actionable insights for your business.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
       <Footer />{" "}
     </>
   );

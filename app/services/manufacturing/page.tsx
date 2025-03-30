@@ -15,32 +15,50 @@ function Page() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="flex h-screen flex-col-reverse md:flex-row items-center bg-purple-900 text-white p-6 rounded-lg shadow-md">
-        <div className=" mb-32  lg:mb-0 ml-10 text-center md:text-left lg:ml-72 lg:mt-32 text-start">
-          <h3 className="text-4xl md:text-5xl font-bold mb-4">
-            Manufacturing ERP System
-          </h3>
-          <p className="mb-4 text-start">
-            Transform Your Manufacturing Operations, Streamline Processes,{" "}
-            <br /> Boost Productivity and Optimize Resources
-          </p>
-          <Button
-            label="Get Free Demo"
-            variant="primary"
-            onClick={() => setModalOpen(true)}
-          />
+    
+  {/* Content */}
+  <div
+  className="relative mt-20 mx-auto flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen  px-4 sm:px-6"
+  style={{
+    backgroundImage: ` url('/manifecuring-bg.jpg')`,
+    backgroundBlendMode: 'overlay',
+  }}
+>
 
-          {/* Modal Component */}
-          <DemoFormModal
-            isOpen={isModalOpen}
-            onClose={() => setModalOpen(false)}
-          />
-        </div>
+  {/* White Overlay */}
+  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-        <div className="flex justify-center  mb-20 md:mt-0 lg:mt-32">
-          <img src="/download.png" alt="Golden-Lake ERP" className="w-3/4   " />
-        </div>
-      </section>
+  {/* Content */}
+  <div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
+    {/* LEFT SIDE - ERP Details */}
+    <div className="flex-1 text-center md:text-start">
+      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-bold ">
+     
+Manufacturing ERP System
+        <hr className="w-full border-white border-2 my-4" />
+      </h1>
+      <p className="text-sm sm:text-base md:text-lg text-white  ">
+      Transform Your Manufacturing Operations, Streamline Processes,
+Boost Productivity and Optimize Resources
+      </p>
+      {/* Contact Button */}
+      <Button
+              label="Get Free Demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+
+            {/* Modal Component */}
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
+    </div>
+
+    {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
+    <div className="flex-1 hidden md:block"></div>
+  </div>
+</div> 
 
       {/* Golden Lake ERP Section */}
       <section className="w-full lg:w-9/12 m-auto p-4">
@@ -92,32 +110,36 @@ function Page() {
       </section>
 
       {/* Industry 4.0 Section */}
-      <section className="flex flex-col md:flex-row items-start p-4 lg:w-9/12 m-auto">
-        <div className="md:w-1/2 text-left mt-6">
-          <h3 className="text-2xl font-bold mb-4">Embracing Industry 4.0RP</h3>
-          <p className="text-justify mb-4">
-            Industry 4.0, often termed the fourth industrial revolution, denotes
-            a profound transformation in manufacturing, reshaping how products
-            are conceived, refined, and disseminated. This revolution integrates
-            emerging technologies, comprehensively reshaping shop floors and
-            procedures. Enhancing Productivity through advanced technologies
-            fundamentally alters the manufacturing landscape, fostering a more
-            agile, intelligent, interconnected ecosystem. This shift yields
-            heightened efficiency, reduced costs, and increased competitiveness.
-            Industry 4.0 symbolizes the metamorphosis of traditional
-            manufacturing into interconnected, intelligent systems, creating an
-            efficient, responsive industrial environment poised for future
-            challenges.
-          </p>
-        </div>
-        <div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
-          <img
-            src="/mani-2.jpg"
-            alt="Golden-Lake ERP"
-            className="lg:w-9/12 h-auto rounded-lg"
-          />
-        </div>
-      </section>
+      <section className="flex flex-col md:flex-row items-center md:items-start p-4 lg:w-9/12 m-auto gap-6">
+  {/* Text Content */}
+  <div className="md:w-1/2 text-left mt-6 max-w-3xl">
+    <h3 className="text-2xl font-bold mb-4">Embracing Industry 4.0</h3>
+    <p className="text-justify mb-4">
+      Industry 4.0, often termed the fourth industrial revolution, denotes
+      a profound transformation in manufacturing, reshaping how products
+      are conceived, refined, and disseminated. This revolution integrates
+      emerging technologies, comprehensively reshaping shop floors and
+      procedures. Enhancing productivity through advanced technologies
+      fundamentally alters the manufacturing landscape, fostering a more
+      agile, intelligent, interconnected ecosystem. This shift yields
+      heightened efficiency, reduced costs, and increased competitiveness.
+      Industry 4.0 symbolizes the metamorphosis of traditional
+      manufacturing into interconnected, intelligent systems, creating an
+      efficient, responsive industrial environment poised for future
+      challenges.
+    </p>
+  </div>
+
+  {/* Image Section */}
+  <div className="md:w-1/2 flex justify-center">
+    <img
+      src="/mani-2.jpg"
+      alt="Golden-Lake ERP"
+      className="w-full md:w-10/12 md:mt-32 lg:mt-0 lg:w-9/12 h-auto rounded-lg"
+    />
+  </div>
+</section>
+
 
       {/* Process Bottlenecks Section */}
       <section className="w-full lg:w-9/12 m-auto first-letter: p-4">
