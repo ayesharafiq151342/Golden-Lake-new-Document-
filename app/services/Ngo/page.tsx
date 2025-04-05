@@ -7,6 +7,7 @@ import Image from 'next/image'
 import NGOERPBenefits from './components/Ngo-befits';
 import { useState } from "react";
 import DemoFormModal from "@/app/components/DemoFormModal";
+import { motion } from 'framer-motion';
 
 function NGO_management() {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -16,11 +17,9 @@ function NGO_management() {
 
 <Navbar/>
 
-      {/* Hero Section */}
-       {/* Hero Section */}
-       <section className="flex flex-col-reverse md:flex-row mt-20 lg:mt-0 items-center h-auto md:h-screen text-black p-6 rounded-lg shadow-md">
-        
-        {/* Text Content */}
+     
+       {/* <section className="flex flex-col-reverse md:flex-row mt-20 lg:mt-0 items-center h-auto md:h-screen text-black p-6 rounded-lg shadow-md">
+       
         <div className="mb-10 md:mb-0 text-center md:text-left lg:ml-72 lg:mt-32 w-full md:w-1/2">
           <h3 className="text-3xl md:text-5xl font-bold mb-4 text-purple-700">
             Golden-Lake ERP System for NGOs
@@ -41,7 +40,7 @@ function NGO_management() {
             />
         </div>
 
-        {/* Image Section */}
+    
         <div className="w-full md:w-full flex justify-center">
           <img 
             src="/ngo-4.webp" 
@@ -50,7 +49,71 @@ function NGO_management() {
           />
         </div>
 
-      </section>
+      </section> */}
+    <div
+      className="relative mt-20 mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
+      style={{
+        backgroundImage: `url('/ngo-4.webp')`,
+        backgroundBlendMode: 'overlay',
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      {/* Content */}
+      <div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
+        {/* LEFT SIDE */}
+        <motion.div
+          className="flex-1 text-center md:text-start"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.h1
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-bold"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            Golden-Lake ERP System for NGOs
+            <hr className="w-full border-white border-2 my-4" />
+          </motion.h1>
+
+          <motion.p
+            className="text-sm sm:text-base md:text-lg text-white"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+           Transform Your Manufacturing Operations, Streamline Processes, <br />
+           Boost Productivity and Optimize Resources
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+          >
+            <Button
+              label="Get Free Demo"
+              variant="secondary"
+              onClick={() => setModalOpen(true)}
+            />
+          </motion.div>
+
+          {/* Modal */}
+          <DemoFormModal
+            isOpen={isModalOpen}
+            onClose={() => setModalOpen(false)}
+          />
+        </motion.div>
+
+        {/* RIGHT SIDE (Optional Form/Visuals) */}
+        <div className="flex-1 hidden md:block"></div>
+      </div>
+    </div>
+
       <section className='w-full p-5 lg:w-9/12 m-auto'>
 
 <div className=' lg:m-auto flex '>

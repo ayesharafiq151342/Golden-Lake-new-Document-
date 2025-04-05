@@ -51,43 +51,69 @@ const Industry_service =[
     <>
       <Navbar />
       {/* Content */}
+      
       <div
-        className="relative mt-20 mx-auto flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen md:h-screen px-4 sm:px-6"
+        className="relative mt-20 mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
         style={{
           backgroundImage: "url('/data-analytics-and-reporting.jpg')",
+
+          backgroundBlendMode: "overlay",
         }}
       >
-        {/* White Overlay */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
         {/* Content */}
         <div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
-          {/* LEFT SIDE - ERP Details */}
-          <div className="flex-1 text-center md:text-start">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+          {/* LEFT SIDE */}
+          <motion.div
+            className="flex-1 text-center md:text-start"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h1
+              className="text-xl sm:text-2xl md:text-xl lg:text-4xl text-white font-bold"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
               Data Analytics and Reporting
-              <hr className="w-full border-white border-2 my-4" />
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white">
-              Optimize your business with Multi-Techno’s data analytics and
-              reporting for smarter, data-driven decisions.
-            </p>
-            {/* Contact Button */}
-            {/* Contact Button Linking to Form */}
-            <Button
-              label="Get Free Demo"
-              variant="secondary"
-              onClick={() => setModalOpen(true)}
-            />
 
-            {/* Modal Component */}
+              <hr className="w-full border-white border-2 my-4" />
+            </motion.h1>
+
+            <motion.p
+              className="text-sm sm:text-base md:text-lg text-white"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+           Optimize your business with Multi-Techno’s data analytics and
+           reporting for smarter, data-driven decisions.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
+              <Button
+                label="Get Free Demo"
+                variant="secondary"
+                onClick={() => setModalOpen(true)}
+              />
+            </motion.div>
+
+            {/* Modal */}
             <DemoFormModal
               isOpen={isModalOpen}
               onClose={() => setModalOpen(false)}
             />
-          </div>
+          </motion.div>
 
-          {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
+          {/* RIGHT SIDE (Optional Form/Visuals) */}
           <div className="flex-1 hidden md:block"></div>
         </div>
       </div>
@@ -198,7 +224,7 @@ const Industry_service =[
       />
       {/* Case Studies Demonstrating ERP Adoption in The Solar Business
               Successfully  */}
-      <section className=" md:w-9/12 m-auto mt-10 lg:w-9/12 2-full p-7">
+      <section className=" m-auto mt-10 lg:w-9/12 2-full p-7">
         <section>
           <div className="mt-10">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">

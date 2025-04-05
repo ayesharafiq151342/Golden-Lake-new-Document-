@@ -36,7 +36,7 @@ function BenefitCard({ title = "Default Title", description = "Default Descripti
   return (
     <div className="p-6 border rounded-lg shadow-md bg-white">
       <h2 className="text-xl font-semibold mb-2">{title}</h2>
-      <p>{description}</p>
+      <p className="text-justify">{description}</p>
     </div>
   );
 }

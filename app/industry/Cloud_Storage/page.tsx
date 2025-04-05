@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Footer from "@/app/components/footer";
 import Navbar from "@/app/components/navbar";
 import React from "react";
@@ -13,45 +14,72 @@ function Page() {
     <>
       <Navbar />
       {/* Content */}
-      <div
-        className="relative mt-20 mx-auto flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen md:h-screen px-4 sm:px-6"
-        style={{
-          backgroundImage: "url('/cloud-storage-facilities-1.webp')",
-        }}
+      
+        <div
+      className="relative mt-20 mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
+      style={{
+        backgroundImage: `url('/cloud-storage-facilities-1.webp')`,
+        backgroundBlendMode: 'overlay',
+      }}
       >
-        {/* White Overlay */}
-        <div className=" bg-white  lg:bg-transparent bg-opacity-80"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      
+      {/* Content */}
+      <div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
+        {/* LEFT SIDE */}
+        <motion.div
+          className="flex-1 text-center md:text-start"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.h1
+            className="text-xl sm:text-2xl md:text-xl lg:text-4xl text-white font-bold"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+                             Cloud Storage
 
-        {/* Content */}
-        <div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
-          {/* LEFT SIDE - ERP Details */}
-          <div className="flex-1 text-center md:text-start">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-              Cloud Storage
-              <hr className="w-full border-white border-2 my-4" />
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white">
-              Golden Lake ERP for the cold storage industry streamlines
+                  
+      
+            <hr className="w-full border-white border-2 my-4" />
+          </motion.h1>
+      
+          <motion.p
+            className="text-sm sm:text-base md:text-lg text-white"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+                        Golden Lake ERP for the cold storage industry streamlines
               operations and makes them transparent to all.
-            </p>
-            {/* Contact Button */}
-           {/* Contact Button Linking to Form */}
-           <Button
+          </motion.p>
+      
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+          >
+            <Button
               label="Get Free Demo"
               variant="secondary"
               onClick={() => setModalOpen(true)}
             />
-
-            {/* Modal Component */}
-            <DemoFormModal
-              isOpen={isModalOpen}
-              onClose={() => setModalOpen(false)}
-            />
-          </div>
-
-          {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
-          <div className="flex-1 hidden md:block"></div>
-        </div>
+          </motion.div>
+      
+          {/* Modal */}
+          <DemoFormModal
+            isOpen={isModalOpen}
+            onClose={() => setModalOpen(false)}
+          />
+        </motion.div>
+      
+        {/* RIGHT SIDE (Optional Form/Visuals) */}
+        <div className="flex-1 hidden md:block"></div>
+      </div>
       </div>
       {/*    Solar Power and Energy Management Systems: */}
       <section className=":w-9/12 m-auto mt-10 lg:w-9/12 2-full p-7">
@@ -221,7 +249,7 @@ function Page() {
   
      
       {/* Benefits of ERP software for chemical manufacturers: */}
-      <section className=" md:w-9/12 m-auto  lg:w-9/12   w-full p-7">
+      <section className="  m-auto  lg:w-9/12   w-full p-7">
       <h1 className="text-2xl  mt-4 sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
       Benefits
             </h1>

@@ -6,7 +6,7 @@ function CrmParallax() {
   return (
     <>
       {/* Parallax Section */}
-      <div className="relative h-80 md:h-[500px] overflow-hidden">
+      <div className="relative h-80 md:h-[500px] lg:h-[600px] overflow-hidden">
         {/* Background Image with Parallax */}
         <div
           className="absolute inset-0 bg-cover bg-center md:bg-fixed parallax-bg"
@@ -16,12 +16,12 @@ function CrmParallax() {
         {/* Black Overlay */}
         <div className="absolute inset-0 bg-purple-200 bg-opacity-70 flex flex-col items-center justify-center px-4">
           {/* Heading */}
-          <h1 className="text-xl md:text-4xl font-bold text-black text-center w-11/12 md:w-8/12 leading-snug">
-            Transform your customer interactions—choose Golden-Lake CRM solutions today!
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black text-center w-11/12 md:w-8/12 leading-snug">
+            Transform your customer interactions choose Golden-Lake CRM solutions today!
           </h1>
 
           {/* Description */}
-          <p className="text-sm md:text-lg text-black text-center w-11/12 md:w-8/12 mt-3">
+          <p className="text-sm sm:text-base md:text-lg text-black text-center w-11/12 md:w-8/12 mt-3">
             Take your business to the next level with Golden-Lake’s CRM solutions! Streamline customer management and drive growth today—contact us now!
           </p>
 

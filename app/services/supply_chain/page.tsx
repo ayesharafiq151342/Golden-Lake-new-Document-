@@ -2,7 +2,8 @@
 import Navbar from "@/app/components/navbar";
 import Button from "@/app/ui/style";
 import Link from "next/link";
-import DemoForm from "@/app/components/demoform";
+import { motion } from 'framer-motion';
+
 import A from "./components/mani-erp-per";
 import Footer from "@/app/components/footer";
 import SupplyChain_Manage from "./components/supply_manage";
@@ -15,42 +16,80 @@ function Manage_system() {
     <>
       <Navbar />
 
-      {/* HERO SECTION */}
-      <div
-        className="mt-20 mx-auto flex flex-col lg:items-center items-center justify-center bg-cover bg-center text-center h-screen backdrop-blur-md"
+
+
+<div
+        className="relative mt-20 mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
         style={{
-          backgroundImage: "url('/mani-page3.webp')",
-          backgroundColor: "rgb(130, 128, 127)",
-          backgroundBlendMode: "multiply",
+          backgroundImage: `url('/mani-page3.webp')`,
+          backgroundBlendMode: "overlay",
         }}
       >
-        <div className="w-full max-w-7xl  md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
-          {/* LEFT SIDE - ERP Details */}
-          <div className="flex-1 m-auto text-center md:text-start">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-              Supply Chain Management Solutions
-            </h1>
-            <ul className="text-white mt-4 text-sm md:text-base list-disc list-inside">
-              <li>Simplify procurement and inventory with SCM tools</li>
-              <li>Ensure transparency with real-time tracking</li>
-              <li>Cut costs and boost efficiency with automation</li>
-            </ul>
-            {/* Contact Button Linking to Form */}
-            <Button
-              label="Get Free Demo"
-              variant="secondary"
-              onClick={() => setModalOpen(true)}
-            />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+    
+        {/* Content */}
+        <div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
+          {/* LEFT SIDE */}
+          <motion.div
+            className="flex-1 text-center md:text-start"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h1
+              className="text-xl sm:text-xl md:text-xl lg:text-4xl text-white font-bold"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+           
+           Supply Chain Management Solutions
 
-            {/* Modal Component */}
-          </div>
-          {/* RIGHT SIDE - Request for Demo Form */}
-          <div className="flex-1 flex justify-center">
-            <DemoForm />
-          </div>
+
+              <hr className="w-full border-white border-2 my-4" />
+            </motion.h1>
+            <motion.div
+  className="text-sm sm:text-base md:text-lg text-white"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4, duration: 0.8 }}
+>
+  <p>
+    Here are the key advantages of using our system:
+  </p>
+  <ul className="text-white mt-4 text-sm md:text-base lg:text-lg list-disc list-inside">
+    <li>Simplify procurement and inventory with SCM tools</li>
+    <li>Ensure transparency with real-time tracking</li>
+    <li>Cut costs and boost efficiency with automation</li>
+  </ul>
+</motion.div>
+
+    
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
+              <Button
+                label="Get Free Demo"
+                variant="secondary"
+                onClick={() => setModalOpen(true)}
+              />
+            </motion.div>
+    
+            {/* Modal */}
+            <DemoFormModal
+              isOpen={isModalOpen}
+              onClose={() => setModalOpen(false)}
+            />
+          </motion.div>
+    
+          {/* RIGHT SIDE (Optional Form/Visuals) */}
+          <div className="flex-1 hidden md:block"></div>
         </div>
       </div>
-
       <A />
 
       {/* Parallax Section */}

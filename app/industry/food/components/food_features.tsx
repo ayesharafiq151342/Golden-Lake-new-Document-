@@ -4,7 +4,7 @@ import React from "react";
 
 const ERPFoodManufacturing = () => {
   return (
-    <section className="md:w-9/12 mx-auto px-6 py-12">
+    <section className="md:w-11/12 lg:w-9/12 w-full m-auto px-36 py-16">
       {/* Section Title */}
       <h2 className="text-3xl font-bold text-gray-800 mb-4">
         ERP Software For Food Manufacturers
@@ -74,7 +74,7 @@ Moreover, real-time data analytics and reporting enable manufacturers to forecas
           </p>
         </div>
         <img
-          src="/healthy-food-pyramid-chart-2GX7K7R.jpg"
+          src="/deting.avif"
           alt="Customer Satisfaction Chart"
           className="rounded-lg w-full shadow-lg"
         />

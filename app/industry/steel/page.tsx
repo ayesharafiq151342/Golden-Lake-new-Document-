@@ -14,44 +14,68 @@ function Page() {
     <>
       <Navbar />
       {/* Content */}
+    
       <div
-        className="relative mt-20 mx-auto flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen md:h-screen px-4 sm:px-6"
+        className="relative mt-20 mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
         style={{
-          backgroundImage:
-            "url('/industry-men-working-machinery-in-steel-factory-free-photo.jpg')",
+          backgroundImage: `url('/industry-men-working-machinery-in-steel-factory-free-photo.jpg')`,
+          backgroundBlendMode: "overlay",
         }}
       >
-        {/* White Overlay */}
-        <div className=" bg-white  lg:bg-transparent bg-opacity-80"></div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
         {/* Content */}
         <div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
-          {/* LEFT SIDE - ERP Details */}
-          <div className="flex-1 text-center md:text-start">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-              Steel Industry
+          {/* LEFT SIDE */}
+          <motion.div
+            className="flex-1 text-center md:text-start"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h1
+              className="text-xl sm:text-2xl md:text-xl lg:text-4xl text-white font-bold"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+             Steel Industry
               <hr className="w-full border-white border-2 my-4" />
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white">
+            </motion.h1>
+
+            <motion.p
+              className="text-sm sm:text-base md:text-lg text-white"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
               Golden Lake System is the best Software solution for the Steel
               Industry that will guide you in all your native problems of the
               company and provide a permanent solution.
-            </p>
-            {/* Contact Button */}
-            <Button
-              label="Get Free Demo"
-              variant="secondary"
-              onClick={() => setModalOpen(true)}
-            />
+            </motion.p>
 
-            {/* Modal Component */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
+              <Button
+                label="Get Free Demo"
+                variant="secondary"
+                onClick={() => setModalOpen(true)}
+              />
+            </motion.div>
+
+            {/* Modal */}
             <DemoFormModal
               isOpen={isModalOpen}
               onClose={() => setModalOpen(false)}
             />
-          </div>
+          </motion.div>
 
-          {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
+          {/* RIGHT SIDE (Optional Form/Visuals) */}
           <div className="flex-1 hidden md:block"></div>
         </div>
       </div>
@@ -75,41 +99,37 @@ function Page() {
         </p>
 
         <div className="flex justify-center mt-20 mb-20">
-        
-        
-
-<div className="flex-1">
-<h2 className="text-xl font-semibold mb-3 mt-4">Key Features</h2>
-        <ul className="list-disc pl-6 mb-6 text-gray-700">
-          <li>Accounts & Finance</li>
-          <li>MRP & Production</li>
-          <li>Cash & Bank Management</li>
-          <li>Quality Control</li>
-          <li>Purchase & Import</li>
-          <li>Asset Management</li>
-          <li>Inventory Management</li>
-          <li>Sales</li>
-          <li>Project Management</li>
-          <li>HR & Payroll</li>
-          <li>Business Intelligence</li>
-        </ul></div>
-<div className="flex-1">
-
-             <motion.img
-      src="/trading-erp.png"
-      alt="ERP Services"
-      className="rounded-lg w-full max-w-2xl rounded-lg shadow-lg "
-      initial={{ opacity: 0, y: 20 }} // Starts slightly lower
-      animate={{ opacity: [0, 1, 1, 0], y: [20, 0, 0, 20] }} // Loop fade-in & bounce effect
-      transition={{
-        duration: 3, // Total time per cycle
-        ease: "easeInOut",
-        repeat: Infinity, // Infinite loop
-      }}
-    />
-</div>
-        
-</div>
+          <div className="flex-1">
+            <h2 className="text-xl font-semibold mb-3 mt-4">Key Features</h2>
+            <ul className="list-disc pl-6 mb-6 text-gray-700">
+              <li>Accounts & Finance</li>
+              <li>MRP & Production</li>
+              <li>Cash & Bank Management</li>
+              <li>Quality Control</li>
+              <li>Purchase & Import</li>
+              <li>Asset Management</li>
+              <li>Inventory Management</li>
+              <li>Sales</li>
+              <li>Project Management</li>
+              <li>HR & Payroll</li>
+              <li>Business Intelligence</li>
+            </ul>
+          </div>
+          <div className="flex-1">
+            <motion.img
+              src="/trading-erp.png"
+              alt="ERP Services"
+              className="rounded-lg w-full max-w-2xl rounded-lg shadow-lg "
+              initial={{ opacity: 0, y: 20 }} // Starts slightly lower
+              animate={{ opacity: [0, 1, 1, 0], y: [20, 0, 0, 20] }} // Loop fade-in & bounce effect
+              transition={{
+                duration: 3, // Total time per cycle
+                ease: "easeInOut",
+                repeat: Infinity, // Infinite loop
+              }}
+            />
+          </div>
+        </div>
         <h2 className="text-2xl font-semibold mb-3">
           Benefits of ERP for the Steel Industry
         </h2>

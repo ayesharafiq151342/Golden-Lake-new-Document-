@@ -1,6 +1,25 @@
+'use client';
 import React from "react";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const ERPServices = () => {
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 20;  // Left/right
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -20; // Up/down
+    setRotate({ x, y });
+    console.log();
+    
+  };
+
+  const handleMouseLeave = () => {
+    setRotate({ x: 0, y: 0 });
+  };
+
   return (<>
     <div className="p-8 space-y-12">
       {/* Empowering Businesses Section */}
@@ -128,8 +147,17 @@ const ERPServices = () => {
       {/* Expert Advice Section */}
       <section className="text-center">
         <h2 className="text-2xl mt-20 font-bold text-purple-800 mb-4">Help Your Team Perform Better With Our Expert Advice</h2>
-        <img src="/erp-full-services.png" alt="Expert Advice" className="mx-auto w-2/3 mt-20" />
-      </section>
+        <div className="w-2/3 mx-auto mt-20" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+      <motion.img
+        src="/erp-full-services.png"
+        alt="Expert Advice"
+        className="w-full rounded-xl shadow-lg"
+        animate={{ rotateX: rotate.y, rotateY: rotate.x }}
+        transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+        style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+      />
+    </div>
+    </section>
 
       {/* Consultancy Services Section */}
       <section className="bg-purple-50 lg:w-9/12 lg:m-auto p-6 rounded-lg shadow-md">

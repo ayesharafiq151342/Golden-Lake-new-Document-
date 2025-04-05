@@ -13,47 +13,72 @@ function Page() {
     <>
       <Navbar />
       {/* Content */}
+      
       <div
-        className="relative mt-20 mx-auto flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen md:h-screen px-4 sm:px-6"
-        style={{
-          backgroundImage:
-            "url('/solar-panels-roof-solar-cell_335224-1324.avif')",
-        }}
-      >
-        {/* White Overlay */}
-        <div className=" bg-white  lg:bg-transparent bg-opacity-80"></div>
+className="relative mt-20 mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
+style={{
+  backgroundImage: `url('/solar-panels-roof-solar-cell_335224-1324.avif')`,
+  backgroundBlendMode: 'overlay',
+}}
+>
+{/* Overlay */}
+<div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-        {/* Content */}
-        <div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
-          {/* LEFT SIDE - ERP Details */}
-          <div className="flex-1 text-center md:text-start">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-              SOLAR INDUSTY MANAGEMENT SYSTEM
-              <hr className="w-full border-white border-2 my-4" />
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white">
-              ERP systems can be customized to meet the unique needs and
-              challenges of different industries
-            </p>
-            {/* Contact Button */}
-              {/* Contact Button Linking to Form */}
-              <Button
-              label="Get Free Demo"
-              variant="secondary"
-              onClick={() => setModalOpen(true)}
-            />
+{/* Content */}
+<div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
+  {/* LEFT SIDE */}
+  <motion.div
+    className="flex-1 text-center md:text-start"
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+  >
+    <motion.h1
+      className="text-xl sm:text-2xl md:text-xl lg:text-4xl text-white font-bold"
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2, duration: 0.8 }}
+    >
+              Solar Industry Management  System
+            
 
-            {/* Modal Component */}
-            <DemoFormModal
-              isOpen={isModalOpen}
-              onClose={() => setModalOpen(false)}
-            />
-          </div>
+      <hr className="w-full border-white border-2 my-4" />
+    </motion.h1>
 
-          {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
-          <div className="flex-1 hidden md:block"></div>
-        </div>
-      </div>
+    <motion.p
+      className="text-sm sm:text-base md:text-lg text-white"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.8 }}
+    >
+                    ERP systems can be customized to meet the unique needs and
+                    challenges of different industries
+    </motion.p>
+
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.6, duration: 0.6 }}
+    >
+      <Button
+        label="Get Free Demo"
+        variant="secondary"
+        onClick={() => setModalOpen(true)}
+      />
+    </motion.div>
+
+    {/* Modal */}
+    <DemoFormModal
+      isOpen={isModalOpen}
+      onClose={() => setModalOpen(false)}
+    />
+  </motion.div>
+
+  {/* RIGHT SIDE (Optional Form/Visuals) */}
+  <div className="flex-1 hidden md:block"></div>
+</div>
+</div>
       {/*    Solar Power and Energy Management Systems: */}
       <section className=":w-9/12 m-auto mt-10 lg:w-9/12 2-full p-7">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">

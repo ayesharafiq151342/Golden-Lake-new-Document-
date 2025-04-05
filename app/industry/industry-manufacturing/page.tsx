@@ -2,12 +2,13 @@
 
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
-import DemoForm from "@/app/components/demoform";
 import Industry_paralex from "./components/paralex";
 import ERPFeatures from "./components/Industry_Feature";
 import { useState } from "react";
 import DemoFormModal from "@/app/components/DemoFormModal";
 import Button from "@/app/ui/style";
+import { motion } from 'framer-motion';
+
 function Trading_system() {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -63,51 +64,72 @@ function Trading_system() {
     <>
       <Navbar />
 
-      {/* HERO SECTION */}
+ 
       <div
-        className="mt-20 mx-auto flex flex-col lg:items-center items-center h-screen justify-center bg-cover bg-center text-center"
-        style={{
-          backgroundImage: ` url('/industry-manufacturing.jpg')`,
-          backgroundBlendMode: "overlay",
-        }}
-      >
-        
-        {/* Background Blur Overlay */}
-        <div className="inset-0 bg-white/20"></div>
+className="relative mt-20 mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
+style={{
+  backgroundImage: `url('/industry-manufacturing.jpg')`,
+  backgroundBlendMode: 'overlay',
+}}
+>
+{/* Overlay */}
+<div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-        {/* Main Content */}
-        <div className="w-full max-w-7xl bg-white/40 mt-10 mb-20 p-4 md:p-8 rounded-lg flex flex-col md:flex-row gap-8">
-          {/* LEFT SIDE - ERP Details */}
-          <div className="flex-1 m-auto text-center md:text-start">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+{/* Content */}
+<div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
+  {/* LEFT SIDE */}
+  <motion.div
+    className="flex-1 text-center md:text-start"
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+  >
+    <motion.h1
+      className="text-xl sm:text-2xl md:text-xl lg:text-4xl text-white font-bold"
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2, duration: 0.8 }}
+    >
               ERP for Manufacturing Industry
-            </h1>
-            <p className="text-white mt-4 text-sm md:text-base">
-              Streamline production and inventory with a unified ERP system
+      <hr className="w-full border-white border-2 my-4" />
+    </motion.h1>
+
+    <motion.p
+      className="text-sm sm:text-base md:text-lg text-white"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.8 }}
+    >
+          Streamline production and inventory with a unified ERP system
               Boost efficiency and reduce costs with real-time data insights
               Enhance decision-making and maintain consistent product quality
-            </p>
+       
+    </motion.p>
 
-            {/* Contact Button Linking to Form */}
-            <Button
-              label="Get Free Demo"
-              variant="secondary"
-              onClick={() => setModalOpen(true)}
-            />
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.6, duration: 0.6 }}
+    >
+      <Button
+        label="Get Free Demo"
+        variant="secondary"
+        onClick={() => setModalOpen(true)}
+      />
+    </motion.div>
 
-            {/* Modal Component */}
-            <DemoFormModal
-              isOpen={isModalOpen}
-              onClose={() => setModalOpen(false)}
-            />
-          </div>
+    {/* Modal */}
+    <DemoFormModal
+      isOpen={isModalOpen}
+      onClose={() => setModalOpen(false)}
+    />
+  </motion.div>
 
-          {/* RIGHT SIDE - Request for Demo Form */}
-          <div className="flex-1 flex justify-center">
-            <DemoForm />
-          </div>
-        </div>
-      </div>
+  {/* RIGHT SIDE (Optional Form/Visuals) */}
+  <div className="flex-1 hidden md:block"></div>
+</div>
+</div>
       <div className="container mx-auto w-full md:w-9/12   px-4 py-10 space-y-16">
         <section className="text-center mb-12">
           <h1 className="lg:text-3xl  lg:text-center font-bold">
@@ -125,43 +147,32 @@ function Trading_system() {
           </p>
         </section>
 
-        {/* What is Manufacturing ERP Software? */}
-        <section className="grid md:grid-cols-2 gap-8 items-center mb-12">
-          <img
-            src="/industr-textile.webp"
-            alt="ERP Diagram"
-            className=" w-full h-full rounded-lg"
-          />
-          <div className="container mx-auto px-4 py-3 ">
-            <h2 className="text-2xl font-semibold mb-4">
-              What is Manufacturing ERP Software?
-            </h2>
-            <p className="text-gray-600 text-justify">
-              To increase efficiency and production, manufacturing companies can
-              benefit from Enterprise Resource Planning (ERP) software, which
-              helps them manage and connect various company processes and
-              operations. ERP integrates critical functions like inventory
-              management, supply chain coordination, production scheduling,
-              finance, and quality control into a single, unified system. By
-              consolidating data from different departments, ERP provides
-              real-time insights through dashboards, enabling managers to make
-              quick and informed decisions. It enhances automation, reducing
-              manual tasks and human errors, ultimately leading to higher
-              efficiency and productivity.
-            </p>
-            <p className="text-gray-600 text-justify">
-              ERP also improves collaboration across teams by providing a
-              centralized platform where employees can access accurate and
-              up-to-date information. This results in better workflow
-              optimization, cost savings, and improved compliance with industry
-              regulations. With cloud-based ERP solutions, manufacturing
-              businesses can scale easily, monitor operations remotely, and
-              ensure data security while keeping up with market demands.
-              Investing in ERP software is a strategic move that empowers
-              manufacturers to stay competitive in an ever-evolving industry.
-            </p>
-          </div>{" "}
-        </section>
+       
+{/* What is Manufacturing ERP Software? */}
+<section className="w-full  mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mb-12">
+
+  {/* Image */}
+  <div className="w-full">
+    <img
+      src="/industr-textile.webp"
+      alt="ERP Diagram"
+      className="w-full h-auto rounded-lg object-cover"
+    />
+  </div>
+
+  {/* Text Content */}
+  <div className="px-2 sm:px-4 py-3">
+    <h2 className="text-2xl md:text-xl font-semibold mb-4 text-gray-800">
+      What is Manufacturing ERP Software?
+    </h2>
+    <p className="text-gray-600 text-justify text-sm md:text-base mb-4">
+      To increase efficiency and production, manufacturing companies can benefit from Enterprise Resource Planning (ERP) software, which helps them manage and connect various company processes and operations. ERP integrates critical functions like inventory management, supply chain coordination, production scheduling, finance, and quality control into a single, unified system. By consolidating data from different departments, ERP provides real-time insights through dashboards, enabling managers to make quick and informed decisions. It enhances automation, reducing manual tasks and human errors, ultimately leading to higher efficiency and productivity.
+    </p>
+    <p className="text-gray-600 text-justify text-sm md:text-base">
+      ERP also improves collaboration across teams by providing a centralized platform where employees can access accurate and up-to-date information. This results in better workflow optimization, cost savings, and improved compliance with industry regulations. With cloud-based ERP solutions, manufacturing businesses can scale easily, monitor operations remotely, and ensure data security while keeping up with market demands. Investing in ERP software is a strategic move that empowers manufacturers to stay competitive in an ever-evolving industry.
+    </p>
+  </div>
+</section>
 
         {/* Who Requires Industrial ERP? */}
         <section className="max-w-9/12 mx-auto px-6 ">

@@ -46,7 +46,7 @@ function ManufacturingERP() {
  
 
   {/* Text Second on Mobile */}
-  <div className="flex-1 w-96">
+  <div className="flex-1 w-96 md:w-full">
     <h3 className="text-xl font-semibold text-gray-800 mb-2">Benefits of ERP in the Manufacturing Sector</h3>
     <p className="text-gray-700 mb-4 text-justify">
       ERP systems in manufacturing streamline business operations, boost efficiency, and reduce operational costs by

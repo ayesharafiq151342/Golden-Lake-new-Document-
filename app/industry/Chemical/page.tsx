@@ -12,49 +12,69 @@ import { motion } from "framer-motion";
 function Page() {
   const [isModalOpen, setModalOpen] = useState(false);
   return (
-
-
     <>
       <Navbar />
       {/* Content */}
       <div
-        className="relative mt-20 mx-auto flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen md:h-screen px-4 sm:px-6"
+        className="relative mt-20 mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
         style={{
-          backgroundImage:
-            "url('/idustry-blue-chemical-reaction-with-smoke-in-a-flask-concept-of-science-chemistry-experiment-and-laboratory-photo.jpg')",
+          backgroundImage: `url('/idustry-blue-chemical-reaction-with-smoke-in-a-flask-concept-of-science-chemistry-experiment-and-laboratory-photo.jpg')`,
+          backgroundBlendMode: "overlay",
         }}
       >
-        {/* White Overlay */}
-        <div className=" bg-white  lg:bg-transparent bg-opacity-80"></div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
         {/* Content */}
         <div className="relative w-full max-w-7xl md:p-8 rounded-lg flex flex-col md:flex-row gap-8 p-6">
-          {/* LEFT SIDE - ERP Details */}
-          <div className="flex-1 text-center md:text-start">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+          {/* LEFT SIDE */}
+          <motion.div
+            className="flex-1 text-center md:text-start"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h1
+              className="text-xl sm:text-2xl md:text-xl lg:text-4xl text-white font-bold"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
               Chemical Industry
               <hr className="w-full border-white border-2 my-4" />
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white">
+            </motion.h1>
+
+            <motion.p
+              className="text-sm sm:text-base md:text-lg text-white"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
               Leverage your process with unimaginable benefits by automating all
               your processes.
-            </p>
-            {/* Contact Button */}
-            {/* Contact Button Linking to Form */}
-            <Button
-              label="Get Free Demo"
-              variant="secondary"
-              onClick={() => setModalOpen(true)}
-            />
+            </motion.p>
 
-            {/* Modal Component */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
+              <Button
+                label="Get Free Demo"
+                variant="secondary"
+                onClick={() => setModalOpen(true)}
+              />
+            </motion.div>
+
+            {/* Modal */}
             <DemoFormModal
               isOpen={isModalOpen}
               onClose={() => setModalOpen(false)}
             />
-          </div>
+          </motion.div>
 
-          {/* RIGHT SIDE - Request for Demo Form (Placeholder) */}
+          {/* RIGHT SIDE (Optional Form/Visuals) */}
           <div className="flex-1 hidden md:block"></div>
         </div>
       </div>
@@ -63,7 +83,7 @@ function Page() {
         {/*ERP Software for Chemical Manufacturers
          */}
         <section>
-            {/* ERP Software for Chemical Manufacturers */}
+          {/* ERP Software for Chemical Manufacturers */}
           <div className="">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">
               ERP Software for Chemical Manufacturers
@@ -139,55 +159,55 @@ function Page() {
       </section>
       {/* ERP Principles of Solar Power and Energy Management Systems */}
       <section className="bg-gray-200 mt-10 py-16">
-      {/* Section Title Animation */}
-      <motion.div
-        className="text-center mb-10"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
-          Features of ERP Software in the Chemical Industry
-        </h1>
-      </motion.div>
+        {/* Section Title Animation */}
+        <motion.div
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
+            Features of ERP Software in the Chemical Industry
+          </h1>
+        </motion.div>
 
-      {/* Two-column section with animations */}
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-        {[
-          {
-            title: "Secure Documentation",
-            text: "ERP software Golden Lake can integrate all your existing systems into one. In return, efficiency is increased, and top quality is maintained everywhere...",
-          },
-          {
-            title: "Workflows and Processes",
-            text: "Quality control is an important part of the chemical industry. Moreover, it is also the basis for the production of chemicals...",
-          },
-          {
-            title: "Chemical Formulations",
-            text: "The chemical industry requires a master batch protocol. Moreover, it is ideal for ensuring full traceability and accuracy from one product batch to another...",
-          },
-          {
-            title: "Planning Decisions",
-            text: "Golden Lake ERP software gives you all the information you need to make well-informed decisions...",
-          },
-        ].map((item, index) => (
-          <motion.div
-            key={index}
-            className="bg-white p-6 rounded-lg shadow-md"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }} // Staggered effect
-          >
-            <h2 className="text-xl font-semibold text-gray-700 mb-2">
-              {item.title}
-            </h2>
-            <p className="text-gray-600">{item.text}</p>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+        {/* Two-column section with animations */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+          {[
+            {
+              title: "Secure Documentation",
+              text: "ERP software Golden Lake can integrate all your existing systems into one. In return, efficiency is increased, and top quality is maintained everywhere...",
+            },
+            {
+              title: "Workflows and Processes",
+              text: "Quality control is an important part of the chemical industry. Moreover, it is also the basis for the production of chemicals...",
+            },
+            {
+              title: "Chemical Formulations",
+              text: "The chemical industry requires a master batch protocol. Moreover, it is ideal for ensuring full traceability and accuracy from one product batch to another...",
+            },
+            {
+              title: "Planning Decisions",
+              text: "Golden Lake ERP software gives you all the information you need to make well-informed decisions...",
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }} // Staggered effect
+            >
+              <h2 className="text-xl font-semibold text-gray-700 mb-2">
+                {item.title}
+              </h2>
+              <p className="text-gray-600">{item.text}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
       {/* Benefits of ERP software for chemical manufacturers: */}
-      <section className=" md:w-9/12 m-auto mt-10 lg:w-9/12 2-full p-7">
+      <section className="m-auto mt-10 lg:w-9/12 2-full p-7">
         <section>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
             <li className="font-bold">Recipe Management:</li>
