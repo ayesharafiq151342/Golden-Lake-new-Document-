@@ -9,11 +9,12 @@ import { motion } from "framer-motion";
 
 function Page() {
   const [isModalOpen, setModalOpen] = useState(false);
-
   useEffect(() => {
-    // This code runs only on the client
-    console.log(window.innerWidth);
+    if (typeof window !== 'undefined') {
+      console.log(window.innerWidth);
+    }
   }, []);
+  
   return (
     <>
       <Navbar />
