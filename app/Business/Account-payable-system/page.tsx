@@ -2,14 +2,18 @@
 
 import Footer from "@/app/components/footer";
 import Navbar from "@/app/components/navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DemoFormModal from "@/app/components/DemoFormModal";
 import Button from "@/app/ui/style";
 import { motion } from "framer-motion";
 
-function InventoryManagement() {
+function Page() {
   const [isModalOpen, setModalOpen] = useState(false);
 
+  useEffect(() => {
+    // This code runs only on the client
+    console.log(window.innerWidth);
+  }, []);
   return (
     <>
       <Navbar />
@@ -288,4 +292,4 @@ function InventoryManagement() {
   );
 }
 
-export default InventoryManagement;
+export default Page;

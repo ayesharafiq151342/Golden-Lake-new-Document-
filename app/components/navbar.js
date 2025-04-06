@@ -420,7 +420,7 @@ const Navbar = () => {
       <Link
         href="/"
         className={`block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 ${
-          isActive("/") || window.location.pathname === "/" // This ensures the Home link stays active when on the homepage
+          isActive("/") || window.location.pathname === "/" 
             ? "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300"
             : "text-gray-900 dark:text-white"
         }`}
@@ -583,7 +583,7 @@ const Navbar = () => {
                 link: "/Business/inventory-management-system",
               },
               { name: "Purchase Management", link: "/Business/purchase-management" },
-              { name: "Account Payable System/", link: "/Business/Account-payable-system" },
+              { name: "Account Payable System", link: "/Business/Account-payable-system" },
               { name: "Sale Management System", link: "/Business/sale-management-system" },
               {
                 name: "Fixed Asset Management",
