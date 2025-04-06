@@ -4,7 +4,7 @@ import React from "react";
 
 const ERPFoodManufacturing = () => {
   return (
-    <section className="md:w-11/12 lg:w-9/12 w-full m-auto px-36 py-16">
+    <section className="md:w-full lg:w-9/12 w-full m-auto p-5 py-16">
       {/* Section Title */}
       <h2 className="text-3xl font-bold text-gray-800 mb-4">
         ERP Software For Food Manufacturers

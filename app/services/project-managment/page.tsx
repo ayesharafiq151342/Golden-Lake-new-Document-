@@ -149,7 +149,7 @@ enhancing efficiency and collaboration for unparalleled success.
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {process.title}
               </h3>
-              <p className="text-gray-700">{process.description}</p>
+              <p className="text-gray-700 text-justify">{process.description}</p>
             </div>
           ))}
         </div>

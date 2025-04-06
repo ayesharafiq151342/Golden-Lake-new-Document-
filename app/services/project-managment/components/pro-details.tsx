@@ -16,7 +16,7 @@ const Project_detail = () => {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black">
             Efficient Construction & Project ERP Management System
           </h1>
-          <p className="text-gray-600 text-justify lg:text-start mt-4  text-justify ">
+          <p className="text-gray-600  lg:text-start mt-4  text-justify ">
             Revolutionize your approach to construction and project management
             with our cutting-edge ERP system. Designed to meet the industry’s
             unique demands, our comprehensive solution empowers you to navigate

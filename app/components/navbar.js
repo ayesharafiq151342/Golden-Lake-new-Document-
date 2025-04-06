@@ -583,7 +583,7 @@ const Navbar = () => {
                 link: "/Business/inventory-management-system",
               },
               { name: "Purchase Management", link: "/Business/purchase-management" },
-              { name: "Account Payable System/", link: "/Business/Account-payable-system/" },
+              { name: "Account Payable System/", link: "/Business/Account-payable-system" },
               { name: "Sale Management System", link: "/Business/sale-management-system" },
               {
                 name: "Fixed Asset Management",

@@ -70,7 +70,7 @@ function Page() {
       </div>
 
       {/* Features Section */}
-      <div className="md:w-9/12 p-6 m-auto mt-10">
+      <div className="lg:w-9/12 p-6 m-auto mt-10">
         <section className="mb-10">
           <h2 className="text-2xl font-bold mb-4">Features of Cash Management System</h2>
           <p className="text-gray-700 mb-4">
@@ -106,7 +106,7 @@ function Page() {
       </div>
 
       {/* Streamline Section */}
-      <div className="md:w-9/12 p-6 m-auto mt-10 mb-10 text-gray-900">
+      <div className="lg:w-9/12 p-6 m-auto mt-10 mb-10 text-gray-900">
         <h1 className="text-3xl font-bold mb-4">Banks Define Cash Management System</h1>
         <p className="mb-4 font-semibold">Golden Lake</p>
         <p className="mb-6">
@@ -168,7 +168,7 @@ function Page() {
       <ParalexCash />
 
       {/* Final Section */}
-      <div className="md:w-9/12 p-6 m-auto mt-10">
+      <div className="lg:w-9/12 p-6 m-auto mt-10">
         <section className="mb-10 ">
           <h2 className="text-2xl font-bold mb-4 ">Banks Define Cash Management System</h2>
           <p className="text-gray-700 mb-4 ">

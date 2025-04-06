@@ -130,7 +130,7 @@ style={{
   <div className="flex-1 hidden md:block"></div>
 </div>
 </div>
-      <div className="container mx-auto w-full md:w-9/12   px-4 py-10 space-y-16">
+      <div className="container mx-auto w-full lg:w-9/12   px-4 py-10 space-y-16">
         <section className="text-center mb-12">
           <h1 className="lg:text-3xl  lg:text-center font-bold">
             ERP for Manufacturing Industry by Golden Lake
@@ -208,13 +208,13 @@ style={{
         </section>
         {/* ERP Categories */}
         <section className="mb-12 lg:p-0 p-6">
-          <h2 className="text-2xl font-semibold mb-4 lg:text-center text-start ">
+          <h2 className="text-sm font-semibold mb-4 md:text-sm lg:text-2xl lg:text-center text-start ">
             ERP Solutions for Different Business Types
           </h2>
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div className="p-6 border rounded-lg shadow-sm">
               <h3 className="text-xl font-bold">Small Business ERP</h3>
-              <p className="text-gray-600 mt-2">
+              <p className="text-gray-600 text-justify mt-2">
                 Enterprise Resource Planning (ERP) software for small businesses
                 streamlines operations by replacing inefficient manual processes
                 with a unified platform. To handle the intricacies of running a
@@ -224,7 +224,7 @@ style={{
             </div>
             <div className="p-6 border rounded-lg shadow-sm">
               <h3 className="text-xl font-bold">Mid-Market ERP</h3>
-              <p className="text-gray-600 mt-2">
+              <p className="text-gray-600 text-justify mt-2">
                 Software for mid-market manufacturers’ enterprise resource
                 planning (ERP) needs includes analytics out of the box, quick
                 rollout, and process best practices. Growing companies can
@@ -234,7 +234,7 @@ style={{
             </div>
             <div className="p-6 border rounded-lg shadow-sm">
               <h3 className="text-xl font-bold">Business Enterprise ERP</h3>
-              <p className="text-gray-600 mt-2">
+              <p className="text-gray-600 text-justify mt-2">
                 Powerful, state-of-the-art ERP systems with integrated
                 analytics, machine learning, and artificial intelligence are
                 essential for multinational enterprises. To revolutionize

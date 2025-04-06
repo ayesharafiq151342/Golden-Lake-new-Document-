@@ -62,7 +62,7 @@ const handleMouseLeave = () => {
       <motion.img
         src="/CRM-services.webp"
         alt="Expert Advice"
-        className="w-full sm:w-[90%] md:w-[700px] lg:w-[800px] m-auto rounded-xl shadow-lg"
+        className="w-full sm:w-[90%] md:w-[700px] lg:w-[800px] m-auto "
 
         animate={{ rotateX: rotate.y, rotateY: rotate.x }}
         transition={{ type: 'spring', stiffness: 200, damping: 20 }}

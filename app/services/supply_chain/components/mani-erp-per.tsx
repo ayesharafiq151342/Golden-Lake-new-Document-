@@ -7,13 +7,13 @@ const A = () => {
       <h1 className="text-3xl font-bold text-start mb-4">
         The Best Supply Chain Management Solutions
       </h1>
-      <p className="text-start text-gray-700 mb-6">
+      <p className="text-start text-justify text-gray-700 mb-6">
         Modern operational success relies on effective supply chain management (SCM). We at Multi-Techno
         ensure that your supply chain is cost-efficient, risk-free, and optimized.
       </p>
 
       {/* Why Choose Us? */}
-      <h2 className="text-2xl font-semibold text-start  my-4">Why Choose Us?</h2>
+      <h2 className="text-2xl font-semibold text-start text-justify  my-4">Why Choose Us?</h2>
       <p className="text-start text-gray-700 mb-6">
         The correct supply chain management solution is essential to logistic flow, stock management, and market competition.
       </p>
@@ -26,7 +26,7 @@ const A = () => {
         {features.map((feature, index) => (
           <div key={index} className="bg-white   text-start shadow-md p-6 rounded-lg">
             <h3 className="text-lg font-bold  mb-2">{feature.title}</h3>
-            <p className="text-gray-700 text-xl">{feature.description}</p>
+            <p className="text-gray-700 text-justify text-xl">{feature.description}</p>
           </div>
         ))}
       </div>

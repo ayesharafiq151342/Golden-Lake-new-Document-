@@ -246,7 +246,7 @@ style={{
     </section>
       {/* Case Studies Demonstrating ERP Adoption in The Solar Business
               Successfully  */}
-      <section className=" md:w-9/12 m-auto mt-10 lg:w-9/12 2-full p-7">
+      <section className=" lg:w-9/12 m-auto mt-10 lg:w-9/12 2-full p-7">
         <section>
           <div className="mt-10">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-xl xl:text-xl font-bold text-start  mb-5  text-gray-800">

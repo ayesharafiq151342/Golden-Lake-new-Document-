@@ -22,7 +22,7 @@ const ERPFeatures = () => {
   ];
 
   return (
-    <section className="md:w-9/12 w-full  mx-auto px-6 py-12">
+    <section className="lg:w-9/12 w-full  mx-auto px-6 py-12">
       {/* Investment Section */}
     
      

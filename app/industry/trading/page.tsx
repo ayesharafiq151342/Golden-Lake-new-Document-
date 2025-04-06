@@ -81,7 +81,7 @@ style={{
 </div>
 </div>
       {/* ERP Details */}
-      <section className="container w-9/12 mx-auto py-10">
+      <section className="container w-9/12 md:w-full p-5 lg:w-9/12 mx-auto ">
         
         <section className="container lg:mt-20 mx-auto py-10">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-8">
