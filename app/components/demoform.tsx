@@ -25,17 +25,19 @@ function DemoForm() {
 
     try {
       const response = await fetch("/api/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
       });
-
+      
       const result = await response.json();
-      if (response.ok) {
-        toast.success("✅ Form submitted successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" }); // Reset form
+      
+      if (result.success) {
+        toast.success('Form submitted successfully');
       } else {
-        toast.error("❌ Failed to submit form: " + (result.error || "Unknown error"));
+        toast.error('Error: ' + result.error);
       }
     } catch (error) {
       const err = error as Error; // Type assertion

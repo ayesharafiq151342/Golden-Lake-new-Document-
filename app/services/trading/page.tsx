@@ -21,7 +21,7 @@ function Trading_system() {
              bg-cover bg-center text-center h-[400px] sm:h-[500px] md:h-[600px] lg:min-h-screen
              px-4 sm:px-6 md:px-12"
   style={{
-    backgroundImage: `url('/bg-services.jpg')`,
+    backgroundImage: `url('/f.jpg')`,
     backgroundBlendMode: "overlay",
   }}
 >

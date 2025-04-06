@@ -82,25 +82,37 @@ style={{
 </div>
       {/* ERP Details */}
       <section className="container w-9/12 mx-auto py-10">
-        <div className="text-start w-7xl mx-auto">
-          <h2 className="md:text-xl font-bold text-center text-gray-800">Trading and Distribution Industry</h2>
-          <p className="mt-4 text-gray-600 text-justify">
-            Revolutionize your trade and distribution operations with Multi-Techno’s ERP solution...
-          </p>
-        </div>
+        
+        <section className="container lg:mt-20 mx-auto py-10">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-8">
 
-        {/* Image Section */}
-        <div className="mt-8">
-          <img 
+            <div className="w-full lg:w-96 lg:flex-1">
+            <h2 className="md:text-xl font-bold text-center text-gray-800">Trading and Distribution Industry</h2>
+          <p className="mt-4 text-gray-600 text-justify">
+          Revolutionize your trade and distribution operations with Golden Lake ERP solution, a powerful and versatile platform designed to meet the unique needs of businesses across all sizes in the industry. In the dynamic landscape of the trade and distribution sector, efficient management and control are crucial for success. Golden Lake ERP solution provides a holistic approach, integrating various aspects of trading, Organization, and Operations Effectively.
+<br/>
+Our ERP system offers comprehensive modules tailored to address challenges specific to the trade and distribution industry. From inventory management and order processing to supply chain coordination and financial control, every aspect is covered. The solution ensures seamless communication and collaboration across departments, fostering a cohesive and efficient workflow.
+<br/>
+
+Key features include real-time tracking of inventory levels, automated order processing, supplier relationship management, and robust financial modules for accurate accounting and reporting. The system’s scalability makes it suitable for businesses of all sizes, providing the flexibility to adapt and grow in a competitive market. Experience the next level of efficiency and control in trade and distribution with Golden Lake ERP solution.
+          </p>
+            </div>
+
+            <div className="w-full lg:flex-1 mt-8 lg:mt-0 flex justify-center">
+            <img 
             src="/dashboard2.png" 
             alt="Trading ERP Dashboard" 
-            className="w-full lg:mt-20 rounded-lg shadow-lg"
+            className="w-full  rounded-lg shadow-lg"
           />
-        </div>
+            </div>
+          </div>
+        </section>
+     
 
         {/* Features Section */}
         <section className="container lg:mt-20 mx-auto py-10">
-          <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-8">
+
             <div className="w-full lg:w-96 lg:flex-1">
               <h2 className="md:text-xl font-bold text-gray-800">Trading ERP Features</h2>
               <ul className="mt-4 space-y-2 text-gray-700">

@@ -10,7 +10,7 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-bold border-l-4 border-purple-400 pl-2 mb-4">About Us</h3>
           <p className="text-sm leading-relaxed">
-          ERP software and systems are designed and implemented by <span className="font-semibold">Multi-Techno</span>, a registered company. 
+          ERP software and systems are designed and implemented by <span className="font-semibold">Golden Lake</span>, a registered company. 
         By combining data from <span className="font-semibold">financials, sales, CRM, inventories</span>, and <span className="font-semibold">operations</span>, businesses can 
         increase productivity, make better decisions, and boost profitability using our <span className="font-semibold">ERP System</span>, 
         a single, integrated software platform.     </p>
@@ -50,7 +50,7 @@ const Footer = () => {
               <Mail className="mr-2 w-5 h-5" /> info@Golden-lake.com
             </li>
             <li className="flex items-center">
-              <Phone className="mr-2 w-5 h-5" /> +92390061612
+              <Phone className="mr-2 w-5 h-5" /> 03186271612
             </li>
           
             <li className="flex items-start">

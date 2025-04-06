@@ -8,7 +8,7 @@ function Fronthome() {
     const [isModalOpen, setModalOpen] = useState(false);
   return (
     <div
-    className="relative mt-20 mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
+    className="relative  mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
     style={{
       backgroundImage: ` url('/bgimg.jpg')`,
 
@@ -70,7 +70,7 @@ Best ERP Software in Pakistan for Enterprises & Growing Businesses
       {/* RIGHT SIDE (Optional Form/Visuals) */}
       <div className="flex-1 hidden md:block"></div>
     </div>
-  </div>// 
+  </div>
     
   );
 }

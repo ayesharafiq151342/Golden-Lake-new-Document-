@@ -22,7 +22,12 @@ function Trading_services() {
         </p>
       </section>
 
-      <img src="/dashboard2.png" alt="Expert Advice" className="mx-auto lg:w-9/12  w-80 mt-10 rounded-lg shadow-md" />
+      <img
+        src="/dashboard2.png"
+        alt="Expert Advice"
+        className="mx-auto w-full max-w-[720px] mt-10 rounded-lg shadow-md"
+      />
+
 
       <div className="p-4 lg:p-8 min-h-96">
         <div className="lg:w-9/12 mx-auto bg-white p-6 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-6">

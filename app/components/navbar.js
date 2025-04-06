@@ -375,7 +375,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between p-4 md:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
-          <h1 className="text-lg md:text-xl lg:text-2xl font-semibold dark:text-white">
+          <h1 className="text-lg md:text-lg lg:text-2xl font-semibold dark:text-white">
             Golden <span className="text-purple-700">Lake</span>
           </h1>
         </Link>

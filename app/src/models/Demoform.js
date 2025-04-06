@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -17,5 +18,8 @@ const UserSchema = new mongoose.Schema({
   },
   message: { type: String },
 });
+
 const User = mongoose.models.demoform || mongoose.model("demoform", UserSchema);
+
+
 export default User;
