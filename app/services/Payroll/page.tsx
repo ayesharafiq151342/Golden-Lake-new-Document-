@@ -1,16 +1,17 @@
 "use client";
+import React, { useState } from 'react'
 import Footer from '@/app/components/footer'
 import Navbar from '@/app/components/navbar'
-import React, { useState } from 'react'
+
 import Payroll_services from './components/payroll-serveics'
 import Payroll_benifts from './components/payroll-benfit'
 import { motion } from 'framer-motion';
 import DemoFormModal from "@/app/components/DemoFormModal";
 import Button from "@/app/ui/style";
-function page() {
-  const [isModalOpen, setModalOpen] = useState(false);
+function Page() {
 
-  
+    const [isModalOpen, setModalOpen] = useState(false);
+
   return (
     <div>
       
@@ -198,4 +199,4 @@ style={{
   )
 }
 
-export default page
+export default Page
