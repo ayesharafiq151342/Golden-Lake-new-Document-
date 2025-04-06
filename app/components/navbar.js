@@ -417,17 +417,18 @@ const Navbar = () => {
           <ul className="flex flex-col md:flex-row md:space-x-4 lg:space-x-6 border md:border-0 rounded-lg bg-gray-50 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
             {/* Home */}
             <li>
-              <Link
-                href="/"
-                className={`block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 ${
-                  isActive("/")
-                    ? "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300"
-                    : "text-gray-900 dark:text-white"
-                }`}
-              >
-                Home
-              </Link>
-            </li>
+      <Link
+        href="/"
+        className={`block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 ${
+          isActive("/") || window.location.pathname === "/" // This ensures the Home link stays active when on the homepage
+            ? "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300"
+            : "text-gray-900 dark:text-white"
+        }`}
+      >
+        Home
+      </Link>
+    </li>
+
 
             {/* Services */}
             <li className="relative">

@@ -1,17 +1,14 @@
 "use client";
-import React from 'react'
-import Navbar from '@/app/components/navbar'
-import FrenchMenu from './components/loaction';
-import Footer from '@/app/components/footer'
+import React from "react";
+import Navbar from "@/app/components/navbar";
+import FrenchMenu from "./components/loaction";
+import Footer from "@/app/components/footer";
 import DemoForm from "@/app/components/demoform";
-import LocationMap from './components/location_map';
+import LocationMap from "./components/location_map";
 function Page() {
-
-
   return (
-   <>
-   <Navbar/>
-    
+    <>
+      <Navbar />
       {/* Content Section */}
       <div
         className="mt-20 mx-auto flex flex-col lg:items-center items-center h-screen justify-center bg-cover bg-center text-center"
@@ -25,17 +22,18 @@ function Page() {
           {/* LEFT SIDE - ERP Details */}
           <div className="flex-1 m-auto text-center md:text-start">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-          
-Contact Us
+              Contact Us
             </h1>
-            <p className="text-white mt-4 text-sm md:text-base">
-            Thank you for visiting Multi-Techno Integrated Software Solutions. We always strive to serve our clients the best we can. Your satisfaction is paramount importance to us. Feel free to contact us for any kind of Information, Quotations or for Technical Support. We will serve you regarding your matter as soon as possible.
+            <p className="text-white mt-4 text-justify text-sm md:text-base">
+              Thank you for visiting Multi-Techno Integrated Software Solutions.
+              We always strive to serve our clients the best we can. Your
+              satisfaction is paramount importance to us. Feel free to contact
+              us for any kind of Information, Quotations or for Technical
+              Support. We will serve you regarding your matter as soon as
+              possible.
             </p>
 
             {/* Contact Button Linking to Form */}
-       
-
-        
           </div>
 
           {/* RIGHT SIDE - Request for Demo Form */}
@@ -43,7 +41,11 @@ Contact Us
             <DemoForm />
           </div>
         </div>
-      </div><FrenchMenu/>
-      <LocationMap/><Footer/> </>  )
+      </div>
+      <FrenchMenu />
+      <LocationMap />
+      <Footer />{" "}
+    </>
+  );
 }
-export default Page
+export default Page;

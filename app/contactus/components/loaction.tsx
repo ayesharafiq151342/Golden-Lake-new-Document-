@@ -4,9 +4,7 @@ const FrenchMenu = () => {
   const menuItems = [
     {
       type: 'PAKISTAN',
-      title: 'Office # 100, 101 Second Floor Kohinoor 1, Faisalabad, Pakistan',
-      Phone: 'Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of garden herbs.',
-     Email:"",
+      title: 'House no 563. Main  road  Narwala banglow.',
       image: '/fsd-clock.png',
     },
     
@@ -18,7 +16,7 @@ const FrenchMenu = () => {
     {/* Heading */}
     <div className="mb-8 text-start">
       <h1 className="text-4xl text-center md:text-5xl font-semibold text-purple-900 dark:text-white">
-      OUR LOCATIONS
+      Our Location
       </h1>
      
     </div>
@@ -44,16 +42,17 @@ const FrenchMenu = () => {
             {/* Contact Info with Text Start */}
             <div className="flex flex-col text-start space-y-4">
               <p className="flex items-center gap-2">
-                <Phone className="h-5 w-5" /> +1 234 567 890
+                <Phone className="h-5 w-5" /> +92186271612
               </p>
               <p className="flex items-center gap-2">
-                <Mail className="h-5 w-5" /> info@example.com
+                <Mail className="h-5 w-5" />goldenlake151342@gmail.com
               </p>
             </div>
           </div>
         </div>
       ))}
     </div>
+    
   </div>
 </div>
 

@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import Footer from '@/app/components/footer'
 import Navbar from '@/app/components/navbar'
-
 import Payroll_services from './components/payroll-serveics'
 import Payroll_benifts from './components/payroll-benfit'
 import { motion } from 'framer-motion';

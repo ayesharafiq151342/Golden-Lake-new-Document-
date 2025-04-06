@@ -49,37 +49,41 @@ function AboutPage() {
           </section>
 
           {/* Our Mission Section */}
-          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 items-center">
-            <div className="bg-purple-700 rounded-lg p-6 shadow-md">
-              <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
-              <p className="text-justify leading-relaxed">
-                Customer affiliation is our topmost priority, particularly for
-                those who require personalized attention. We focus on building
-                strong relationships by understanding individual needs and
-                providing tailored solutions.
-                <br /><br />
-                Our mission is to deliver exceptional services that ensure
-                transparency, trust, and integrity. With our innovative
-                approach, we strive to enhance consumer engagement, satisfaction,
-                and long-term loyalty.
-                <br /><br />
-                Every client is valued, and our efforts are geared towards
-                creating a seamless and fulfilling experience. We listen, adapt,
-                and innovate to meet evolving customer demands, ensuring lasting
-                success.
-              </p>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="/mission.jpg"
-                alt="Customer Interaction"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </section>
+          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 m items-center">
+
+  {/* Image Section (on medium screens and below, the image will be above the text) */}
+  <div className="rounded-lg overflow-hidden shadow-lg w-full lg:order-2">
+    <img
+      src="/mission.jpg"
+      alt="Customer Interaction"
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Text Section */}
+  <div className="bg-purple-700 rounded-lg p-6 shadow-md w-full lg:order-1">
+    <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
+    <p className="text-justify leading-relaxed">
+      Customer affiliation is our topmost priority, particularly for
+      those who require personalized attention. We focus on building
+      strong relationships by understanding individual needs and
+      providing tailored solutions.
+      <br /><br />
+      Our mission is to deliver exceptional services that ensure
+      transparency, trust, and integrity. With our innovative
+      approach, we strive to enhance consumer engagement, satisfaction,
+      and long-term loyalty.
+      <br /><br />
+      Every client is valued, and our efforts are geared towards
+      creating a seamless and fulfilling experience. We listen, adapt,
+      and innovate to meet evolving customer demands, ensuring lasting
+      success.
+    </p>
+  </div>
+</section>
 
           {/* Our Vision Section */}
-          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 items-center">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
                 src="/vision.jpg"
