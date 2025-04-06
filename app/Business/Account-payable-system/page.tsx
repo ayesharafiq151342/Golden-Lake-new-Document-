@@ -7,14 +7,18 @@ import DemoFormModal from "@/app/components/DemoFormModal";
 import Button from "@/app/ui/style";
 import { motion } from "framer-motion";
 
-function Page() {
-  const [isModalOpen, setModalOpen] = useState(false);
+function Page() { 
+  const [width, setWidth] = useState(0);
+
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      console.log(window.innerWidth);
-    }
+    setWidth(window.innerWidth);
   }, []);
-  
+console.log(width);
+
+
+
+  const [isModalOpen, setModalOpen] = useState(false);
+ 
   return (
     <>
       <Navbar />
