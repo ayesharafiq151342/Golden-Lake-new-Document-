@@ -418,9 +418,9 @@ const Navbar = () => {
             {/* Home */}
             <li>
       <Link
-        href="/"
+        href="/Home"
         className={`block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 ${
-          isActive("/") || window.location.pathname === "/" 
+          isActive("/Home") 
             ? "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300"
             : "text-gray-900 dark:text-white"
         }`}

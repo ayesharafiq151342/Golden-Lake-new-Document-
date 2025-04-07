@@ -123,7 +123,7 @@ const Footer = () => {
 
             <li className="flex items-start">
               <MapPin className="mr-2 w-5 h-5 mt-1" />
-              House no 563. Main  road  Narwala banglow.
+              House No 563 Main  Road  Narwala Banglow
             </li>
           </ul>
 

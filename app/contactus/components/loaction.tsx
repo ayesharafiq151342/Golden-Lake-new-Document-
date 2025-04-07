@@ -4,7 +4,7 @@ const FrenchMenu = () => {
   const menuItems = [
     {
       type: 'PAKISTAN',
-      title: 'House no 563. Main  road  Narwala banglow.',
+      title: 'House No 563 Main  Road  Narwala Banglow',
       image: '/fsd-clock.png',
     },
     
