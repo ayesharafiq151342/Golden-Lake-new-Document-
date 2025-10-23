@@ -15,8 +15,9 @@ const FrenchMenu = () => {
   <div className="container mx-auto py-10">
     {/* Heading */}
     <div className="mb-8 text-start">
-      <h1 className="text-4xl text-center md:text-5xl font-semibold text-purple-900 dark:text-white">
-      Our Location
+      <h1 className="text-4xl text-center md:text-5xl font-semibold text-purple-900 dark:text-black">
+      Our Location 
+      {/* <h1>sdasd</h1> */}
       </h1>
      
     </div>

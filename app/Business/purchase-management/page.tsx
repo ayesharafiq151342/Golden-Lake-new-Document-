@@ -81,7 +81,7 @@ function InventoryManagement() {
           <div className="flex-1 hidden md:block"></div>
         </div>
       </div>
-      <div className="lg:w-9/12 w-full  mx-auto p-6 text-gray-900 dark:text-white">
+      <div className="lg:w-9/12 w-full  mx-auto p-6 text-gray-900 dark:text-black">
         <h1 className="text-3xl font-bold mb-4">
           Enhance Efficiency with Golden LAke Purchase Management System
         </h1>

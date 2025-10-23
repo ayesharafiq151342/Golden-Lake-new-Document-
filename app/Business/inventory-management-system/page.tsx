@@ -13,6 +13,7 @@ function InventoryManagement() {
   return (
     <>
       <Navbar />
+   
       {/* Content */}
       <div
         className="relative mt-20 mx-auto md:h-[600px] flex flex-col items-center justify-center bg-cover bg-center text-center lg:min-h-screen px-4 sm:px-6"
@@ -79,7 +80,7 @@ function InventoryManagement() {
           <div className="flex-1 hidden md:block"></div>
         </div>
       </div>
-      <div className="lg:w-9/12 w-full  mx-auto p-6 text-gray-900 dark:text-white">
+      <div className="lg:w-9/12 w-full  mx-auto p-6 text-white dark:text-black">
         <h1 className="text-3xl font-bold mb-4">
           Optimize Operations with Golden Lake’s Inventory Management System
         </h1>

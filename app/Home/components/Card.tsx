@@ -1,16 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation"; // ✅ Import Next.js router
+import { useRouter } from "next/navigation"; // ✅ Next.js router
 
-interface FlipCardProps {
-  image: string; // ✅ Accept image as a string (URL)
-  title: string;
-  description: string;
-  link: string;
-}
-
-const FlipCard: React.FC<FlipCardProps> = ({ image, title, description, link }) => {
+// No TypeScript types now (if you're using .jsx instead of .tsx)
+const FlipCard = ({ icon, title, description, link }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const router = useRouter();
 
@@ -20,7 +14,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ image, title, description, link }) 
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
-      {/* Card Wrapper */}
+      {/* Flip Wrapper */}
       <motion.div
         className="w-full h-full relative"
         animate={{ rotateX: isFlipped ? 180 : 0 }}
@@ -32,7 +26,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ image, title, description, link }) 
           className="absolute w-full h-full bg-white shadow-lg rounded-lg flex flex-col items-center justify-center p-5 border"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <img src={image} alt={title} className="w-16 h-16 mb-3" /> {/* ✅ Display Image */}
+          <div className="mb-3">{icon}</div> {/* ✅ Show Icon instead of Image */}
           <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
         </div>
 
@@ -41,10 +35,10 @@ const FlipCard: React.FC<FlipCardProps> = ({ image, title, description, link }) 
           className="absolute w-full h-full bg-purple-600 text-white shadow-lg rounded-lg flex flex-col items-center justify-center p-5 border"
           style={{ backfaceVisibility: "hidden", transform: "rotateX(180deg)" }}
         >
-          <p className="text-sm text-start">{description}</p>
+          <p className="text-sm text-center">{description}</p>
           <button
-            className="mt-4 px-4 py-2 bg-white text-purple-600 font-semibold rounded-lg shadow"
-            onClick={() => router.push(link)} // ✅ Navigate to link on click
+            className="mt-4 px-4 py-2 bg-white text-purple-600 font-semibold rounded-lg shadow hover:bg-purple-100 transition"
+            onClick={() => router.push(link)} // ✅ Navigate to route
           >
             View More
           </button>
