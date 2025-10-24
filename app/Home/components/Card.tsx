@@ -1,50 +1,86 @@
-// FlipCard.jsx
-"use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { 
+  FaCogs, 
+  FaFileInvoiceDollar, 
+  FaBoxes, 
+  FaShoppingCart, 
+  FaChartLine, 
+  FaProjectDiagram, 
+  FaUsers 
+} from "react-icons/fa";
 
-const FlipCard = ({ icon: Icon, title, description, link }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const router = useRouter();
+type Service = {
+  icon: React.ComponentType;
+  title: string;
+  description: string;
+  link?: string;
+};
+
+const FlipCardPage: React.FC = () => {
+  const services: Service[] = [
+    { icon: FaCogs, title: "Application Setup", description: "Configure and customize your ERP application for business needs." },
+    { icon: FaFileInvoiceDollar, title: "Accounts Management", description: "Manage financial accounts, transactions, and reporting efficiently." },
+    { icon: FaBoxes, title: "Inventory Management", description: "Monitor stock levels, track products, and manage warehouse operations." },
+    { icon: FaShoppingCart, title: "Purchases Management", description: "Streamline purchase orders, vendor management, and procurement processes." },
+    { icon: FaChartLine, title: "Sales Management", description: "Optimize sales processes, track orders, and improve customer relations." },
+    { icon: FaProjectDiagram, title: "Projects Management", description: "Plan, execute, and track projects with task and team management tools." },
+    { icon: FaUsers, title: "HR Management", description: "Manage employee records, payroll, and HR processes effectively." },
+  ];
+
+  const FlipCard: React.FC<Service> = ({ icon: Icon, title, description }) => {
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    return (
+      <div
+        onClick={() => setIsFlipped(!isFlipped)}
+        className="relative w-full h-64 perspective cursor-pointer"
+      >
+        <div
+          className="absolute w-full h-full text-center transition-transform duration-500"
+          style={{
+            transformStyle: "preserve-3d",
+            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
+          }}
+        >
+          {/* Front */}
+          <div
+            className="absolute w-full h-full flex flex-col items-center justify-center rounded-lg shadow-lg bg-purple-700 text-white"
+            style={{
+              backfaceVisibility: "hidden"
+            }}
+          >
+            <Icon className="text-5xl mb-4" />
+            <h3 className="text-lg font-bold">{title}</h3>
+          </div>
+
+          {/* Back */}
+          <div
+            className="absolute w-full h-full flex items-center justify-center rounded-lg shadow-lg p-4 bg-purple-700 text-white"
+            style={{
+              backfaceVisibility: "hidden",
+              transform: "rotateY(180deg)"
+            }}
+          >
+            <p>{description}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
-    <motion.div
-      className="relative w-full h-72 cursor-pointer"
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
-    >
-      <motion.div
-        className="w-full h-full relative"
-        animate={{ rotateX: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.5 }}
-        style={{ transformStyle: "preserve-3d" }}
-      >
-        {/* Front */}
-        <div
-          className="absolute w-full h-full bg-white shadow-lg rounded-lg flex flex-col items-center justify-center p-5 border"
-          style={{ backfaceVisibility: "hidden" }}
-        >
-          <Icon size={40} className="text-blue-600 mb-3" /> {/* ✅ Render Icon */}
-          <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
-        </div>
+    <div className="text-center mx-auto mt-20 px-4 sm:px-6 md:px-12 lg:px-20 max-w-7xl">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">
+        Golden Lake ERP Modules
+      </h1>
 
-        {/* Back */}
-        <div
-          className="absolute w-full h-full bg-purple-600 text-white shadow-lg rounded-lg flex flex-col items-center justify-center p-5 border"
-          style={{ backfaceVisibility: "hidden", transform: "rotateX(180deg)" }}
-        >
-          <p className="text-sm text-center">{description}</p>
-          <button
-            className="mt-4 px-4 py-2 bg-white text-purple-600 font-semibold rounded-lg shadow hover:bg-purple-100 transition"
-            onClick={() => router.push(link)}
-          >
-            View More
-          </button>
-        </div>
-      </motion.div>
-    </motion.div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 p-4">
+        {services.map((service, index) => (
+          <FlipCard key={index} {...service} />
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default FlipCard;
+export default FlipCardPage;

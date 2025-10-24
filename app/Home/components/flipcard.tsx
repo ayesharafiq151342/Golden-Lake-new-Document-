@@ -1,6 +1,5 @@
-// FlipCardGrid.jsx
-import React from "react";
-import FlipCard from "./Card";
+
+import React, { useState } from "react";
 import { 
   FaCogs, 
   FaFileInvoiceDollar, 
@@ -11,21 +10,69 @@ import {
   FaUsers 
 } from "react-icons/fa";
 
-const FlipCardGrid = () => {
-  const services = [
-    { icon: FaCogs, color: "text-blue-600", title: "Application Setup", description: "Configure and customize your ERP application for business needs.", link: "/services/manufacturing" },
-    { icon: FaFileInvoiceDollar, color: "text-green-600", title: "Accounts Management", description: "Manage financial accounts, transactions, and reporting efficiently.", link: "/Business/Accounts-And-Finance-Management" },
-    { icon: FaBoxes, color: "text-yellow-600", title: "Inventory Management", description: "Monitor stock levels, track products, and manage warehouse operations.", link: "/Business/inventory-management-system" },
-    { icon: FaShoppingCart, color: "text-purple-600", title: "Purchases Management", description: "Streamline purchase orders, vendor management, and procurement processes.", link: "/Business/purchase-management" },
-    { icon: FaChartLine, color: "text-orange-600", title: "Sales Management", description: "Optimize sales processes, track orders, and improve customer relations.", link: "/Business/sale-management-system" },
-    { icon: FaProjectDiagram, color: "text-red-600", title: "Projects Management", description: "Plan, execute, and track projects with task and team management tools.", link: "/services/project-managment" },
-    { icon: FaUsers, color: "text-teal-600", title: "HR Management", description: "Manage employee records, payroll, and HR processes effectively.", link: "/services/Payroll" },
+type Service = {
+  icon: React.ComponentType;
+  title: string;
+  description: string;
+  link?: string;
+};
+
+const FlipCardGrid: React.FC = () => {
+  const services: Service[] = [
+    { icon: FaCogs, title: "Application Setup", description: "Configure and customize your ERP application for business needs." },
+    { icon: FaFileInvoiceDollar, title: "Accounts Management", description: "Manage financial accounts, transactions, and reporting efficiently." },
+    { icon: FaBoxes, title: "Inventory Management", description: "Monitor stock levels, track products, and manage warehouse operations." },
+    { icon: FaShoppingCart, title: "Purchases Management", description: "Streamline purchase orders, vendor management, and procurement processes." },
+    { icon: FaChartLine, title: "Sales Management", description: "Optimize sales processes, track orders, and improve customer relations." },
+    { icon: FaProjectDiagram, title: "Projects Management", description: "Plan, execute, and track projects with task and team management tools." },
+    { icon: FaUsers, title: "HR Management", description: "Manage employee records, payroll, and HR processes effectively." },
   ];
+
+  const FlipCard: React.FC<Service> = ({ icon: Icon, title, description }) => {
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    return (
+      <div
+        onClick={() => setIsFlipped(!isFlipped)}
+        className="relative w-full h-64 perspective cursor-pointer"
+      >
+        <div
+          className="absolute w-full h-full text-center transition-transform duration-500"
+          style={{
+            transformStyle: "preserve-3d",
+            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
+          }}
+        >
+          {/* Front */}
+          <div
+            className="absolute w-full h-full flex flex-col items-center justify-center rounded-lg shadow-lg bg-white text-purple-700"
+            style={{
+              backfaceVisibility: "hidden"
+            }}
+          >
+            <Icon className="text-5xl mb-4" />
+            <h3 className="text-lg font-bold">{title}</h3>
+          </div>
+
+          {/* Back */}
+          <div
+            className="absolute w-full h-full flex items-center justify-center rounded-lg shadow-lg p-4 bg-purple-700 text-white"
+            style={{
+              backfaceVisibility: "hidden",
+              transform: "rotateY(180deg)"
+            }}
+          >
+            <p>{description}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="text-center mx-auto mt-20 px-4 sm:px-6 md:px-12 lg:px-20 max-w-7xl">
       <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">
-        Golden Lake ERP Modules
+        Golden Lake <span className="text-purple-700">ERP</span> Modules
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 p-4">
