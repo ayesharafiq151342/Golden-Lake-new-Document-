@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { 
   FaCogs, 
@@ -11,10 +10,9 @@ import {
 } from "react-icons/fa";
 
 type Service = {
-  icon: React.ComponentType;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; // Accepts className
   title: string;
   description: string;
-  link?: string;
 };
 
 const FlipCardGrid: React.FC = () => {
@@ -46,11 +44,9 @@ const FlipCardGrid: React.FC = () => {
           {/* Front */}
           <div
             className="absolute w-full h-full flex flex-col items-center justify-center rounded-lg shadow-lg bg-white text-purple-700"
-            style={{
-              backfaceVisibility: "hidden"
-            }}
+            style={{ backfaceVisibility: "hidden" }}
           >
-            <Icon className="text-5xl mb-4" />
+            <Icon className="text-5xl mb-4" /> {/* Now works */}
             <h3 className="text-lg font-bold">{title}</h3>
           </div>
 
